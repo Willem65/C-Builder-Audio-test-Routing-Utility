@@ -1,0 +1,671 @@
+object WillemForm1: TWillemForm1
+  Left = 193
+  Top = 322
+  HorzScrollBar.Color = clBtnShadow
+  HorzScrollBar.ParentColor = False
+  Caption = 'WillemForm1'
+  ClientHeight = 558
+  ClientWidth = 691
+  Color = clMedGray
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Consolas'
+  Font.Style = []
+  OnCreate = FormCreate
+  DesignSize = (
+    691
+    558)
+  TextHeight = 13
+  object Label2: TLabel
+    Left = 22
+    Top = 86
+    Width = 54
+    Height = 13
+    Caption = 'Interface'
+  end
+  object Label22: TLabel
+    Left = 16
+    Top = 11
+    Width = 60
+    Height = 13
+    Caption = 'IP Adrress'
+  end
+  object Label1: TLabel
+    Left = 24
+    Top = 157
+    Width = 36
+    Height = 13
+    Caption = 'Object'
+  end
+  object Label3: TLabel
+    Left = 66
+    Top = 157
+    Width = 30
+    Height = 13
+    Caption = 'Value'
+  end
+  object Label4: TLabel
+    Left = 216
+    Top = 8
+    Width = 102
+    Height = 13
+    Caption = 'Module Buss Level'
+  end
+  object Label5: TLabel
+    Left = 352
+    Top = 8
+    Width = 132
+    Height = 13
+    Caption = 'Module Pre Fader Level'
+  end
+  object Label6: TLabel
+    Left = 366
+    Top = 27
+    Width = 73
+    Height = 43
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Source'
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Consolas'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    Layout = tlCenter
+  end
+  object Label7: TLabel
+    Left = 237
+    Top = 27
+    Width = 73
+    Height = 42
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Source'
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Consolas'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    Layout = tlCenter
+  end
+  object Label8: TLabel
+    Left = 619
+    Top = 354
+    Width = 24
+    Height = 36
+    Caption = 'Q'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -29
+    Font.Name = 'Century Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 502
+    Top = 352
+    Width = 24
+    Height = 36
+    Caption = 'Q'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'Century Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 618
+    Top = 444
+    Width = 24
+    Height = 36
+    Caption = 'Q'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -29
+    Font.Name = 'Century Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 501
+    Top = 442
+    Width = 24
+    Height = 36
+    Caption = 'Q'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'Century Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 473
+    Top = 340
+    Width = 85
+    Height = 20
+    Alignment = taCenter
+    Caption = 'HeadPhones'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 590
+    Top = 340
+    Width = 85
+    Height = 20
+    Alignment = taCenter
+    Caption = 'HeadPhones'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 461
+    Top = 429
+    Width = 108
+    Height = 20
+    Alignment = taCenter
+    Caption = 'Studio Speakers'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 581
+    Top = 431
+    Width = 108
+    Height = 20
+    Alignment = taCenter
+    Caption = 'Studio Speakers'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = '@Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label16: TLabel
+    Left = 497
+    Top = 324
+    Width = 35
+    Height = 20
+    Alignment = taCenter
+    Caption = 'CRM'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label17: TLabel
+    Left = 498
+    Top = 413
+    Width = 35
+    Height = 20
+    Alignment = taCenter
+    Caption = 'CRM'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label18: TLabel
+    Left = 604
+    Top = 324
+    Width = 56
+    Height = 20
+    Alignment = taCenter
+    Caption = 'STUDIO'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label19: TLabel
+    Left = 605
+    Top = 416
+    Width = 56
+    Height = 20
+    Alignment = taCenter
+    Caption = 'STUDIO'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object memLog: TMemo
+    Left = 16
+    Top = 176
+    Width = 196
+    Height = 369
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Lucida Console'
+    Font.Style = []
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object UDPEdit: TEdit
+    Left = 16
+    Top = 22
+    Width = 111
+    Height = 21
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 1
+  end
+  object btnOpen: TButton
+    Left = 131
+    Top = 22
+    Width = 75
+    Height = 21
+    Anchors = [akTop, akRight]
+    Caption = 'Open'
+    TabOrder = 2
+    OnClick = btnOpenClick
+  end
+  object lstInterfaces: TComboBox
+    Left = 16
+    Top = 103
+    Width = 109
+    Height = 21
+    Style = csDropDownList
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 3
+    Items.Strings = (
+      'test'
+      'test 1')
+  end
+  object ProgressBar1: TProgressBar
+    Left = 244
+    Top = 103
+    Width = 17
+    Height = 201
+    Max = 1023
+    Orientation = pbVertical
+    Position = 500
+    Smooth = True
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 129
+    Top = 104
+    Width = 71
+    Height = 21
+    Caption = 'Start/Stop'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
+  object TrackBar1: TTrackBar
+    Left = 258
+    Top = 404
+    Width = 30
+    Height = 128
+    Cursor = crHandPoint
+    Max = 1023
+    Orientation = trVertical
+    ShowSelRange = False
+    TabOrder = 6
+  end
+  object ProgressBar2: TProgressBar
+    Left = 279
+    Top = 103
+    Width = 17
+    Height = 201
+    Max = 1023
+    Orientation = pbVertical
+    Position = 500
+    Smooth = True
+    TabOrder = 7
+  end
+  object ProgressBar3: TProgressBar
+    Left = 378
+    Top = 103
+    Width = 17
+    Height = 201
+    Max = 1023
+    Orientation = pbVertical
+    Position = 500
+    Smooth = True
+    TabOrder = 8
+  end
+  object ProgressBar4: TProgressBar
+    Left = 413
+    Top = 103
+    Width = 17
+    Height = 201
+    Max = 1023
+    Orientation = pbVertical
+    Position = 500
+    Smooth = True
+    TabOrder = 9
+  end
+  object TrackBar2: TTrackBar
+    Left = 390
+    Top = 408
+    Width = 30
+    Height = 128
+    Cursor = crHandPoint
+    Max = 0
+    Min = -1023
+    Orientation = trVertical
+    ShowSelRange = False
+    TabOrder = 10
+  end
+  object Button2: TButton
+    Left = 456
+    Top = 32
+    Width = 41
+    Height = 23
+    Caption = 'Source'
+    TabOrder = 11
+  end
+  object Button3: TButton
+    Left = 237
+    Top = 80
+    Width = 17
+    Height = 17
+    Caption = '-'
+    TabOrder = 12
+  end
+  object Button4: TButton
+    Left = 366
+    Top = 80
+    Width = 17
+    Height = 17
+    Caption = '-'
+    TabOrder = 13
+  end
+  object Button5: TButton
+    Left = 292
+    Top = 80
+    Width = 17
+    Height = 17
+    Caption = '+'
+    TabOrder = 14
+  end
+  object Button6: TButton
+    Left = 422
+    Top = 80
+    Width = 17
+    Height = 17
+    Caption = '+'
+    TabOrder = 15
+  end
+  object Button7: TButton
+    Left = 265
+    Top = 80
+    Width = 17
+    Height = 17
+    Caption = 'ok'
+    TabOrder = 16
+  end
+  object Button8: TButton
+    Left = 394
+    Top = 80
+    Width = 17
+    Height = 17
+    Caption = 'ok'
+    TabOrder = 17
+  end
+  object Button9: TButton
+    Left = 376
+    Top = 314
+    Width = 59
+    Height = 19
+    Caption = 'No use'
+    TabOrder = 18
+  end
+  object Button10: TButton
+    Left = 376
+    Top = 337
+    Width = 59
+    Height = 17
+    Caption = 'No use'
+    TabOrder = 19
+  end
+  object Button11: TButton
+    Left = 376
+    Top = 359
+    Width = 59
+    Height = 17
+    Caption = 'No use'
+    TabOrder = 20
+  end
+  object Button12: TButton
+    Left = 376
+    Top = 380
+    Width = 59
+    Height = 17
+    Caption = 'No use'
+    TabOrder = 21
+  end
+  object Button13: TButton
+    Left = 242
+    Top = 313
+    Width = 73
+    Height = 19
+    Caption = 'To Prog bus'
+    TabOrder = 22
+  end
+  object Button14: TButton
+    Left = 242
+    Top = 336
+    Width = 72
+    Height = 17
+    Caption = 'To PFL  bus'
+    TabOrder = 23
+  end
+  object Button15: TButton
+    Left = 242
+    Top = 358
+    Width = 72
+    Height = 17
+    Caption = 'To SUB  bus'
+    TabOrder = 24
+  end
+  object Button16: TButton
+    Left = 242
+    Top = 379
+    Width = 72
+    Height = 17
+    Caption = 'To AUX1 bus'
+    TabOrder = 25
+  end
+  object Button17: TButton
+    Left = 476
+    Top = 227
+    Width = 78
+    Height = 19
+    Caption = 'Prog -> Mon1'
+    TabOrder = 26
+  end
+  object Button18: TButton
+    Left = 476
+    Top = 250
+    Width = 78
+    Height = 17
+    Caption = 'Sub -> Mon1'
+    TabOrder = 27
+  end
+  object Button19: TButton
+    Left = 476
+    Top = 272
+    Width = 78
+    Height = 17
+    Caption = 'Aux -> Mon1'
+    TabOrder = 28
+  end
+  object Button20: TButton
+    Left = 476
+    Top = 293
+    Width = 78
+    Height = 17
+    Caption = 'PFL -> Mon1'
+    TabOrder = 29
+  end
+  object Button21: TButton
+    Left = 593
+    Top = 228
+    Width = 78
+    Height = 19
+    Caption = 'Prog -> Mon1'
+    TabOrder = 30
+  end
+  object Button22: TButton
+    Left = 593
+    Top = 251
+    Width = 78
+    Height = 17
+    Caption = 'Sub -> Mon1'
+    TabOrder = 31
+  end
+  object Button23: TButton
+    Left = 593
+    Top = 273
+    Width = 78
+    Height = 17
+    Caption = 'Aux -> Mon1'
+    TabOrder = 32
+  end
+  object Button24: TButton
+    Left = 593
+    Top = 294
+    Width = 78
+    Height = 17
+    Caption = 'PFL -> Mon1'
+    TabOrder = 33
+  end
+  object Button25: TButton
+    Left = 478
+    Top = 387
+    Width = 17
+    Height = 17
+    Caption = '-'
+    TabOrder = 34
+  end
+  object Button26: TButton
+    Left = 534
+    Top = 387
+    Width = 17
+    Height = 17
+    Caption = '+'
+    TabOrder = 35
+  end
+  object Button27: TButton
+    Left = 506
+    Top = 387
+    Width = 17
+    Height = 17
+    Caption = 'ok'
+    TabOrder = 36
+  end
+  object Button28: TButton
+    Left = 594
+    Top = 388
+    Width = 17
+    Height = 17
+    Caption = '-'
+    TabOrder = 37
+  end
+  object Button29: TButton
+    Left = 650
+    Top = 388
+    Width = 17
+    Height = 17
+    Caption = '+'
+    TabOrder = 38
+  end
+  object Button30: TButton
+    Left = 622
+    Top = 388
+    Width = 17
+    Height = 17
+    Caption = 'ok'
+    TabOrder = 39
+  end
+  object Button31: TButton
+    Left = 476
+    Top = 477
+    Width = 17
+    Height = 17
+    Caption = '-'
+    TabOrder = 40
+  end
+  object Button32: TButton
+    Left = 532
+    Top = 477
+    Width = 17
+    Height = 17
+    Caption = '+'
+    TabOrder = 41
+  end
+  object Button33: TButton
+    Left = 504
+    Top = 477
+    Width = 17
+    Height = 17
+    Caption = 'ok'
+    TabOrder = 42
+  end
+  object Button34: TButton
+    Left = 593
+    Top = 478
+    Width = 17
+    Height = 17
+    Caption = '-'
+    TabOrder = 43
+  end
+  object Button35: TButton
+    Left = 649
+    Top = 478
+    Width = 17
+    Height = 17
+    Caption = '+'
+    TabOrder = 44
+  end
+  object Button36: TButton
+    Left = 621
+    Top = 478
+    Width = 17
+    Height = 17
+    Caption = 'ok'
+    TabOrder = 45
+  end
+  object RefreshTimer: TTimer
+    Interval = 1
+    OnTimer = RefreshTimerTimer
+    Left = 119
+    Top = 133
+  end
+end
