@@ -9,6 +9,7 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 #include <ComCtrls.hpp>
+#include <Vcl.Graphics.hpp>
 
 
 
@@ -35,10 +36,8 @@ __published:	// IDE-managed Components
 	TTrackBar *TrackBar2;
 	TLabel *Label4;
 	TLabel *Label5;
-	TButton *Button2;
-	TLabel *Label6;
 	TButton *Button3;
-	TLabel *Label7;
+	TLabel *LCD1line1;
 	TButton *Button4;
 	TButton *Button5;
 	TButton *Button6;
@@ -48,10 +47,6 @@ __published:	// IDE-managed Components
 	TButton *Button10;
 	TButton *Button11;
 	TButton *Button12;
-	TButton *Button13;
-	TButton *Button14;
-	TButton *Button15;
-	TButton *Button16;
 	TButton *Button17;
 	TButton *Button18;
 	TButton *Button19;
@@ -80,16 +75,10 @@ __published:	// IDE-managed Components
 	TTrackBar *TrackBar4;
 	TTrackBar *TrackBar5;
 	TTrackBar *TrackBar6;
-	TLabel *Label20;
-	TLabel *Label21;
-	TLabel *Label23;
-	TLabel *Label24;
-	TLabel *Label25;
 	TLabel *Label26;
-	TMemo *Memo1;
+	TMemo *memLog2;
 	TLabel *Label27;
 	TLabel *Label28;
-	TLabel *Label29;
 	TLabel *Label30;
 	TLabel *Label31;
 	TProgressBar *ProgressBar5;
@@ -112,12 +101,30 @@ __published:	// IDE-managed Components
 	TLabel *Label36;
 	TLabel *Label38;
 	TLabel *Label39;
-	TLabel *Label40;
 	TLabel *Label41;
+	TCheckBox *CheckBox1;
+	TLabel *LCD1line2;
+	TLabel *LCD2line1;
+	TLabel *LCD2line2;
+	TLabel *SourceLabelBtn;
+	TLabel *Label6;
+	TLabel *Label7;
+	TLabel *Label20;
+	TLabel *Label21;
+	TGroupBox *GroupBox7;
+	TLabel *Label57;
+	TImage *Image1;
+	TImage *Image2;
+	TGroupBox *GroupBox5;
+	TGroupBox *GroupBox6;
+	TGroupBox *GroupBox8;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall btnOpenClick(TObject *Sender);
         void __fastcall RefreshTimerTimer(TObject *Sender);
     void __fastcall Button1Click(TObject *Sender);
+	void __fastcall CheckBox1Click(TObject *Sender);
+	void __fastcall SourceButtonClick(TObject *Sender);
+	void __fastcall SourceLabelBtnClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
          struct mbn_handler *mbn;
