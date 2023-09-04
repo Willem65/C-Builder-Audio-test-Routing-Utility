@@ -423,13 +423,14 @@ object WillemForm1: TWillemForm1
     Caption = '1089'
   end
   object GroupBox2: TGroupBox
-    Left = 457
+    Left = 454
     Top = 170
     Width = 115
     Height = 375
     Anchors = [akTop]
     Caption = '   CRM Section'
     TabOrder = 35
+    ExplicitLeft = 451
     object TrackBar5: TTrackBar
       Left = 24
       Top = 330
@@ -484,7 +485,7 @@ object WillemForm1: TWillemForm1
   object memLog: TMemo
     Left = 16
     Top = 172
-    Width = 212
+    Width = 208
     Height = 249
     Anchors = [akLeft, akTop, akRight, akBottom]
     Font.Charset = ANSI_CHARSET
@@ -495,19 +496,20 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitWidth = 196
+    ExplicitWidth = 204
+    ExplicitHeight = 248
   end
   object UDPEdit: TEdit
     Left = 16
     Top = 22
-    Width = 127
+    Width = 123
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 1
-    ExplicitWidth = 111
+    ExplicitWidth = 119
   end
   object btnOpen: TButton
-    Left = 147
+    Left = 143
     Top = 22
     Width = 75
     Height = 21
@@ -515,12 +517,12 @@ object WillemForm1: TWillemForm1
     Caption = 'Open'
     TabOrder = 2
     OnClick = btnOpenClick
-    ExplicitLeft = 131
+    ExplicitLeft = 139
   end
   object lstInterfaces: TComboBox
     Left = 16
     Top = 103
-    Width = 125
+    Width = 121
     Height = 21
     Style = csDropDownList
     Anchors = [akLeft, akTop, akRight]
@@ -528,7 +530,7 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
-    ExplicitWidth = 109
+    ExplicitWidth = 117
   end
   object ProgressBar1: TProgressBar
     Left = 253
@@ -793,7 +795,7 @@ object WillemForm1: TWillemForm1
   object Memo1: TMemo
     Left = 15
     Top = 445
-    Width = 212
+    Width = 208
     Height = 129
     Anchors = [akLeft, akTop, akRight, akBottom]
     Font.Charset = ANSI_CHARSET
@@ -804,8 +806,8 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 38
-    ExplicitWidth = 196
-    ExplicitHeight = 108
+    ExplicitWidth = 204
+    ExplicitHeight = 128
   end
   object ProgressBar5: TProgressBar
     Left = 316

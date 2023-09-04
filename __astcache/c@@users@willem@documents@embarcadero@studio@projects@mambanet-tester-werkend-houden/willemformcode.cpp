@@ -44,7 +44,7 @@ void mOnlineStatus(struct mbn_handler *mbn, unsigned long addr, char valid)
 
 }
 
-char VuValue, vuValueR;
+int VuValue, vuValueR;
 char bufferVuMeter[16];
 
 int mSensorDataChanged(struct mbn_handler *mbn, struct mbn_message *msg, unsigned short obj, unsigned char type, union mbn_data dat)
@@ -54,14 +54,13 @@ int mSensorDataChanged(struct mbn_handler *mbn, struct mbn_message *msg, unsigne
 	if ( obj == 1088 )
 	{
 		VuValue = dat.UInt;
-		//sprintf(bufferVuMeter, "#%04d_%04d", obj, dat.UInt);
-		bufferVuMeter[0]=obj;
-		bufferVuMeter[1]=VuValue;
+		sprintf(bufferVuMeter, "#%04d_%04d", obj, VuValue);
 	}
 
 	else if ( obj == 1089 )
 	{
 		vuValueR = dat.UInt;
+		sprintf(bufferVuMeter, "#%04d_%04d", obj, vuValueR);
 	}
 
 	return 0;
@@ -394,20 +393,96 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 		   ProgressBar1->Position = oldtst;
 		   ProgressBar2->Position = oldtstR;
 
-			//char* dest = new char[100];
-			char buf[100];
-//			dest[0] = 0; //Zero length string to start
-//			strcat(buf, bufferVuMeter[0]);
-//			strcat(dest, " is");
-//			strcat(dest, " oke");
+		   ProgressBar3->Position = oldtst;
+		   ProgressBar4->Position = oldtstR;
 
-		   sprintf(buf,"%s %s %s", bufferVuMeter, bufferVuMeter, bufferVuMeter);
+		   ProgressBar5->Position = oldtst;
+		   ProgressBar6->Position = oldtstR;
 
+		   ProgressBar7->Position = oldtst;
+		   ProgressBar8->Position = oldtstR;
 
-		   //memLog->Lines->Add(bufferVuMeter[0] + ' ' + bufferVuMeter[1] + ' ' + bufferVuMeter[1]);
+		   ProgressBar9->Position = oldtst;
+		   ProgressBar10->Position = oldtstR;
+
+		   ProgressBar11->Position = oldtst;
+		   ProgressBar12->Position = oldtstR;
+
+		   ProgressBar13->Position = oldtst;
+		   ProgressBar14->Position = oldtstR;
+
+		   ProgressBar15->Position = oldtst;
+		   ProgressBar16->Position = oldtstR;
+
+		   //memLog->Lines->Add(bufferVuMeter);
+
+			char Temp[32];
+//
+//			StrPCopy(Temp, VuValue);
+
+			sprintf(Temp, "#%04d_%04d\n\r #%04d_%04d", 1088, VuValue, 1089, vuValueR);
+			//sprintf(Temp, "#%04d_%04d", 1089, vuValueR);
+
+			memLog->Lines->Add(Temp);
 
 		}
+
+
+
+		double tst=1;
+
+
+
+
+
 }
+
+
+
+int CorrTabel(double tst)
+{
+	double rtst = 0, corrected=6;
+
+		 if ( (tst * corrected) > 147 ) rtst = corrected * 40;
+	else if ( (tst * corrected) > 146 ) rtst = corrected * 39;
+	else if ( (tst * corrected) > 145 ) rtst = corrected * 38;
+	else if ( (tst * corrected) > 144 ) rtst = corrected * 36;
+	else if ( (tst * corrected) > 143 ) rtst = corrected * 34;
+	else if ( (tst * corrected) > 142 ) rtst = corrected * 33;
+	else if ( (tst * corrected) > 141 ) rtst = corrected * 32;   //7
+	else if ( (tst * corrected) > 140 ) rtst = corrected * 31;
+	else if ( (tst * corrected) > 139 ) rtst = corrected * 30;
+	else if ( (tst * corrected) > 138 ) rtst = corrected * 29;
+	else if ( (tst * corrected) > 137 ) rtst = corrected * 28;
+	else if ( (tst * corrected) > 136 ) rtst = corrected * 27;   //6
+	else if ( (tst * corrected) > 136 ) rtst = corrected * 26;
+	else if ( (tst * corrected) > 135 ) rtst = corrected * 25;
+	else if ( (tst * corrected) > 134 ) rtst = corrected * 24;
+	else if ( (tst * corrected) > 133 ) rtst = corrected * 23;   //4
+	else if ( (tst * corrected) > 132 ) rtst = corrected * 22;
+	else if ( (tst * corrected) > 131 ) rtst = corrected * 21;
+	else if ( (tst * corrected) > 130 ) rtst = corrected * 19;
+	else if ( (tst * corrected) > 129 ) rtst = corrected * 18;   //5
+	else if ( (tst * corrected) > 127 ) rtst = corrected * 16;
+	else if ( (tst * corrected) > 125 ) rtst = corrected * 14;   //5
+	else if ( (tst * corrected) > 123 ) rtst = corrected * 13;
+	else if ( (tst * corrected) > 121 ) rtst = corrected * 12;
+	else if ( (tst * corrected) > 120 ) rtst = corrected * 11;
+	else if ( (tst * corrected) > 119 ) rtst = corrected * 10;   //4
+	else if ( (tst * corrected) > 117 ) rtst = corrected * 9;
+	else if ( (tst * corrected) > 116 ) rtst = corrected * 8;
+	else if ( (tst * corrected) > 114 ) rtst = corrected * 7;
+	else if ( (tst * corrected) > 111 ) rtst = corrected * 6;
+	else if ( (tst * corrected) > 103 ) rtst = corrected * 5;
+	else if ( (tst * corrected) > 92  ) rtst = corrected * 4;
+	else if ( (tst * corrected) > 76  ) rtst = corrected * 3;
+	else if ( (tst * corrected) > 57  ) rtst = corrected * 2;
+	else if ( (tst * corrected) >= 35 ) rtst = corrected * 1;
+	else if ( (tst * corrected) < 17  ) rtst = corrected * 0;
+
+	return (int)rtst;
+}
+
 //---------------------------------------------------------------------------
 
 void __fastcall TWillemForm1::Button1Click(TObject *Sender)
@@ -416,5 +491,7 @@ void __fastcall TWillemForm1::Button1Click(TObject *Sender)
     //Timer1->Enabled=false;
 }
 //---------------------------------------------------------------------------
+
+
 
 

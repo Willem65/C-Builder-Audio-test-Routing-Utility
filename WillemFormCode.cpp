@@ -426,7 +426,63 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 			memLog->Lines->Add(Temp);
 
 		}
+
+
+
+		double tst=1;
+
+
+
+
+
 }
+
+
+
+int CorrTabel(double tst)
+{
+	double rtst = 0, corrected=6;
+
+		 if ( (tst * corrected) > 147 ) rtst = corrected * 40;
+	else if ( (tst * corrected) > 146 ) rtst = corrected * 39;
+	else if ( (tst * corrected) > 145 ) rtst = corrected * 38;
+	else if ( (tst * corrected) > 144 ) rtst = corrected * 36;
+	else if ( (tst * corrected) > 143 ) rtst = corrected * 34;
+	else if ( (tst * corrected) > 142 ) rtst = corrected * 33;
+	else if ( (tst * corrected) > 141 ) rtst = corrected * 32;   //7
+	else if ( (tst * corrected) > 140 ) rtst = corrected * 31;
+	else if ( (tst * corrected) > 139 ) rtst = corrected * 30;
+	else if ( (tst * corrected) > 138 ) rtst = corrected * 29;
+	else if ( (tst * corrected) > 137 ) rtst = corrected * 28;
+	else if ( (tst * corrected) > 136 ) rtst = corrected * 27;   //6
+	else if ( (tst * corrected) > 136 ) rtst = corrected * 26;
+	else if ( (tst * corrected) > 135 ) rtst = corrected * 25;
+	else if ( (tst * corrected) > 134 ) rtst = corrected * 24;
+	else if ( (tst * corrected) > 133 ) rtst = corrected * 23;   //4
+	else if ( (tst * corrected) > 132 ) rtst = corrected * 22;
+	else if ( (tst * corrected) > 131 ) rtst = corrected * 21;
+	else if ( (tst * corrected) > 130 ) rtst = corrected * 19;
+	else if ( (tst * corrected) > 129 ) rtst = corrected * 18;   //5
+	else if ( (tst * corrected) > 127 ) rtst = corrected * 16;
+	else if ( (tst * corrected) > 125 ) rtst = corrected * 14;   //5
+	else if ( (tst * corrected) > 123 ) rtst = corrected * 13;
+	else if ( (tst * corrected) > 121 ) rtst = corrected * 12;
+	else if ( (tst * corrected) > 120 ) rtst = corrected * 11;
+	else if ( (tst * corrected) > 119 ) rtst = corrected * 10;   //4
+	else if ( (tst * corrected) > 117 ) rtst = corrected * 9;
+	else if ( (tst * corrected) > 116 ) rtst = corrected * 8;
+	else if ( (tst * corrected) > 114 ) rtst = corrected * 7;
+	else if ( (tst * corrected) > 111 ) rtst = corrected * 6;
+	else if ( (tst * corrected) > 103 ) rtst = corrected * 5;
+	else if ( (tst * corrected) > 92  ) rtst = corrected * 4;
+	else if ( (tst * corrected) > 76  ) rtst = corrected * 3;
+	else if ( (tst * corrected) > 57  ) rtst = corrected * 2;
+	else if ( (tst * corrected) >= 35 ) rtst = corrected * 1;
+	else if ( (tst * corrected) < 17  ) rtst = corrected * 0;
+
+	return (int)rtst;
+}
+
 //---------------------------------------------------------------------------
 
 void __fastcall TWillemForm1::Button1Click(TObject *Sender)
