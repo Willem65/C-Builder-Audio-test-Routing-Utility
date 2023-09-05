@@ -7,9 +7,6 @@ Coordinates=586,247,52,51
 [ProgressBar2]
 Coordinates=265,125,81,51
 
-[TrackBar1]
-Coordinates=463,369,64,33
-
 [btnOpen]
 Coordinates=452,247,56,51
 
@@ -162,5 +159,5 @@ Coordinates=486,125,46,51
 Coordinates=502,186,70,51
 
 []
-Coordinates=610,125,58,51
+Coordinates=463,369,64,33
 

@@ -27,7 +27,6 @@ __published:	// IDE-managed Components
         TLabel *Label22;
         TProgressBar *ProgressBar1;
     TButton *Button1;
-	TTrackBar *TrackBar1;
 	TProgressBar *ProgressBar2;
 	TProgressBar *ProgressBar3;
 	TProgressBar *ProgressBar4;
@@ -114,6 +113,7 @@ __published:	// IDE-managed Components
 	TProgressBar *ProgressBar18;
 	TLabel *Label45;
 	TLabel *Label41;
+	TTrackBar *TrackBar1;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
