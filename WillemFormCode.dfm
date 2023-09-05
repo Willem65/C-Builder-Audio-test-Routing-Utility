@@ -3475,8 +3475,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 18
   end
   object memLog: TMemo
-    Left = 15
-    Top = 173
+    Left = 16
+    Top = 172
     Width = 207
     Height = 182
     Anchors = []
@@ -3488,10 +3488,10 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 14
+    ExplicitLeft = 15
   end
   object UDPEdit: TEdit
-    Left = 5
+    Left = 4
     Top = 28
     Width = 103
     Height = 21
@@ -3511,7 +3511,7 @@ object WillemForm1: TWillemForm1
     ExplicitLeft = 124
   end
   object lstInterfaces: TComboBox
-    Left = 5
+    Left = 4
     Top = 61
     Width = 104
     Height = 21
@@ -3653,7 +3653,7 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 15
+    Left = 16
     Top = 374
     Width = 206
     Height = 294
@@ -3666,7 +3666,7 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 19
-    ExplicitLeft = 14
+    ExplicitLeft = 15
     ExplicitTop = 373
   end
   object ProgressBar5: TProgressBar

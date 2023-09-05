@@ -400,7 +400,7 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 
 	}
 
-	UDPEdit->Text = "192.168.1.76";
+	UDPEdit->Text = "192.168.0.222";
 
     memLog->Text = online;
 
@@ -1035,4 +1035,5 @@ void __fastcall TWillemForm1::Button4Click(TObject *Sender)
 	 mbnUpdateSensorData(mbn, 1049, d);
 }
 //---------------------------------------------------------------------------
+
 
