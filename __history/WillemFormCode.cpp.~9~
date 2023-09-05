@@ -6,9 +6,13 @@
 #define MBN_VARARG
 
 #include <stdio.h>
+//#include <string>
+//#include <sstream>
+//#include <stdarg.h>
+//#include <string.h>
+ 
 
-#include "mbn.h"
-
+#include "mbn.h" 
 #include "WillemFormCode.h"
 
 
@@ -27,76 +31,156 @@
 TWillemForm1 *WillemForm1;
 
 static int online = 0;
+int plus10dB;
 
 
-
-
-
-
-
-//struct mbn_node_info thisnodeB = {
-//  0, 0,
-//  "MambaNet Node Tester", "D&R Object Tester",
-//  1, 24, 0,
-//	0x00031337, 0x00, /* MambaNet Addr + Services */
-//	"MambaNet Stack Test Application",
-//	">> Willems Node! PI-4B <<",
-//	0x1, 0x0022, 0x0117,   /* UniqueMediaAccessId <----  AHAA 0x1119 Hier staat het ID nummertje van je kaart Interface enzovoort ( Factory, type, ID ) !!!! */
-//	0, 0,     /* Hardware revision */
-//	0, 0,     /* Firmware revision */
-//	0, 0,     /* FPGAFirmware revision */
-//	0,        /* NumberOfObjects */
-//	0,        /* DefaultEngineAddr */
-//	{0,0,0},  /* Hardwareparent */
-//	0         /* Service request */
-//};
-
-
-
-//struct mbn_object objects[6]; // ruimte voor 2 ojecten
 
 
 //  Callback functies
 void mOnlineStatus(struct mbn_handler *mbn, unsigned long addr, char valid)
 {
-    if( valid )
-        online = (int)valid;
-    //else
-      //  online = valid;
+	if( valid )
+		online = (int)valid;
+
 }
 
-unsigned int VuValue;
+int vuValueL, vuValueR;
+char bufferVuMeter[32];
+
+
 
 int mSensorDataChanged(struct mbn_handler *mbn, struct mbn_message *msg, unsigned short obj, unsigned char type, union mbn_data dat)
 {
-    //WillemForm1->memLog->Lines->Add("Sensor data changed from %08lX object %d: %s", msg->AddressFrom, obj, data2str(type, dat));
-    //unsigned int Value = 148+(int)dat.Float;
-    //WillemForm1->memLog->Lines->Add(Value);
+//	if ( obj == 1088 )
+//	{
+//		if ( plus10dB == 0 )
+//		{
+//			vuValueL = dat.UInt - 150;
+//			if (vuValueL < -30 ) vuValueL = 0;
+//		}
+//		else if ( plus10dB == 1 )
+//		{
+//			vuValueL = dat.UInt;
+//			if (vuValueL < 20 ) vuValueL = 0;
+//		}
+//
+//
+//	}
+//	else if ( obj == 1089 )
+//	{
+//		if ( plus10dB == 0 )
+//		{
+//			vuValueR = dat.UInt - 150;
+//			if (vuValueR < -30 ) vuValueR = 0;
+//		}
+//		else if ( plus10dB == 1 )
+//		{
+//			vuValueR = dat.UInt;
+//			if (vuValueR < 20 ) vuValueR = 0;
+//		}
+//	}
+	return 0;
+}
 
 
-    //static char log[500], tmp[500];
-    //va_list va;
-    //va_start(va, fmt);
-    //va_start(va, fmt);
+int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data dat)
+{
 
-    //lck->Enter();
-    //sprintf(tmp, "[%s] %s", sec == LF_APP ? "app" : sec == LF_CB  ? "cb " : sec == LF_OBJ ? "obj" : "adr", fmt);
+	if ( obj == 1036 )
+	{
+
+		int ValueL = (int)dat.Float;
+		if ( ValueL > -50 )
+		{
+
+			vuValueL = 50+dat.Float;
+			vuValueL = ((vuValueL)*10);
+
+		}
+		else
+		{
+			vuValueL = 0;
+		}
+
+//		char Temp[32];
+//		sprintf(Temp, "#%04d_%04d", obj,  vuValueL);
+//		WillemForm1->memLog2->Lines->Add(Temp);
+	}
+	else if ( obj == 1037 )
+	{
+
+		int ValueR = (int)dat.Float;
+		if ( ValueR > -50 )
+		{
+
+			vuValueR = 50+dat.Float;
+			vuValueR = ((vuValueR)*10);
+
+		}
+		else
+		{
+			vuValueR = 0;
+		}
+	}
 
 
-    static char dump[16];
-    if ( obj == 1088 )
-    {
-        VuValue = dat.UInt;
-        sprintf(dump, "#%04d_%04d", obj, dat.UInt);
-    }
 
-    //vsprintf(log, tmp, va);
-    //vsprintf(log, "tst", va);
 
-    WillemForm1->memLog->Lines->Add(dump);
+// ---------------------------- Oled Display Text -------------------------------------------
+	if (obj == 1024)
+	{
+		char buf[16];
+		sprintf(buf, "%s", dat.Octets);
+		WillemForm1->LCD1line1->Caption = buf;
+	}
+	else if (obj == 1030)
+	{
+		char buf[16];
+		sprintf(buf, "%s", dat.Octets);
+		WillemForm1->LCD1line2->Caption = buf;
+	}
+	else if (obj == 1025)
+	{
+		char buf[16];
+		sprintf(buf, "%s", dat.Octets);
+		WillemForm1->LCD2line1->Caption = buf;
+	}
+	else if (obj == 1031)
+	{
+		char buf[16];
+		sprintf(buf, "%s", dat.Octets);
+		WillemForm1->LCD2line2->Caption = buf;
+	}
+	else if (obj == 1195)
+	{
 
-    //Main->StatusBar->Panels->Items[0]->Text = log;
-    //va_end(va);
+		int t=dat.UInt;
+		if( t== 1 )
+		  WillemForm1->SourceLabelBtn->Color = clLime;
+		else
+		  WillemForm1->SourceLabelBtn->Color = clInactiveCaption;
+
+	}
+
+   // ---------------------------- Oled Log Data to memLog2 -------------------------------------------
+//	if (obj >= 1036 && obj <= 1047)
+//	{
+//		char Temp[32];
+//		unsigned int Value = 132+((unsigned int)dat.Float);
+//		Value = ((Value)*7);
+//		sprintf(Temp, "#%04d_%04d", obj,  Value);
+//		WillemForm1->memLog2->Lines->Add(Temp);
+//	}
+//	else if (obj > 1047)
+//	{
+//		char Temp[32];
+//		sprintf(Temp, "%04d_%04d", obj, (int)dat.UInt);
+//		WillemForm1->memLog2->Lines->Add(Temp);
+//	}
+
+
+
+	return 0;
 }
 
 //---------------------------------------------------------------------------
@@ -144,43 +228,48 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 {
 
-    int cnt;
+
+
+	int cnt;
 	struct mbn_interface *itf;
 	char error[MBN_ERRSIZE];
 
-	char Temp[256];
-	char *url_found;
+	char Temp[16];
+	//char *url;
 	//char *port_found;
 	char url[256];
 	char port[16];
-    char obj_desc[32];
-    struct mbn_node_info thisnodeB;
-    int cntSwitch;
-    struct mbn_object objects[350];
-    int cntObject = 0;
+	char obj_desc[32];
+	struct mbn_node_info thisnodeB;
+	int cntSwitch;
+	struct mbn_object objects[350];
+	int cntObject = 0;
 
 
-   //	strcpy(Temp, UDPEdit->Text.c_str());
-	url_found = strtok(Temp, ":");
-	//port_found = strtok(NULL, ":");
+ 
+	String udpText = UDPEdit->Text;
 
-	if (url_found == NULL)
+	//AnsiString udpText = UDPEdit->Text;
+
+	//UnicodeString udpText = UDPEdit->Text;
+
+	StrPCopy(Temp, udpText);
+
+
+   itf = mbnUDPOpen(Temp, strdup("34848"), NULL, error);  // Maak verbinding met ethernet  // strdup( ) handige functie
+
+
+
+	if( itf == NULL )
 	{
-        return; //addlog(LF_APP, "No URL given!");
-	}
-
-	strcpy(url, url_found);
-	sprintf(port, "34848");
-
-	if((itf = mbnUDPOpen(url, port, NULL, error)) == NULL)
-	{
-		return; // addlog(LF_APP, "EthernetOpen failed: %s", error);
+		memLog->Lines->Add( "EthernetOpen failed: %s" );
+		return;
 	}
 
 	//thisnodeB.UniqueIDPerProduct = 8;
 
 
-    thisnodeB.MambaNetAddr = 0;
+	thisnodeB.MambaNetAddr = 0;
 	thisnodeB.Services = 0;
 	sprintf(thisnodeB.Description, "Axite Control Surface 6 Faders + CRM");
 	sprintf(thisnodeB.Name, "Test Node D&R");
@@ -367,8 +456,8 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 	}
 
     // Callbacks
-    mbnSetSensorDataChangedCallback(mbn, mSensorDataChanged);
-    //mbnSetSetActuatorDataCallback(mbn, mSetActuatorData);
+	mbnSetSensorDataChangedCallback(mbn, mSensorDataChanged);
+	mbnSetSetActuatorDataCallback(mbn, mSetActuatorData);
     //mbnSetErrorCallback(mbn, mError);
     mbnSetOnlineStatusCallback(mbn, mOnlineStatus);
 
@@ -388,49 +477,177 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
+int CorrTabel(double tst)
+{
+	double rtst = 0, corrected=1, corrected2=1;
+
+		 if ( (tst / corrected) > 147 ) rtst = corrected2 * 40;
+	else if ( (tst / corrected) > 146 ) rtst = corrected2 * 39;
+	else if ( (tst / corrected) > 145 ) rtst = corrected2 * 38;
+	else if ( (tst / corrected) > 144 ) rtst = corrected2 * 36;
+	else if ( (tst / corrected) > 143 ) rtst = corrected2 * 34;
+	else if ( (tst / corrected) > 142 ) rtst = corrected2 * 33;
+	else if ( (tst / corrected) > 141 ) rtst = corrected2 * 32;   //7
+	else if ( (tst / corrected) > 140 ) rtst = corrected2 * 31;
+	else if ( (tst / corrected) > 139 ) rtst = corrected2 * 30;
+	else if ( (tst / corrected) > 138 ) rtst = corrected2 * 29;
+	else if ( (tst / corrected) > 137 ) rtst = corrected2 * 28;
+	else if ( (tst / corrected) > 136 ) rtst = corrected2 * 27;   //6
+	else if ( (tst / corrected) > 136 ) rtst = corrected2 * 26;
+	else if ( (tst / corrected) > 135 ) rtst = corrected2 * 25;
+	else if ( (tst / corrected) > 134 ) rtst = corrected2 * 24;
+	else if ( (tst / corrected) > 133 ) rtst = corrected2 * 23;   //4
+	else if ( (tst / corrected) > 132 ) rtst = corrected2 * 22;
+	else if ( (tst / corrected) > 131 ) rtst = corrected2 * 21;
+	else if ( (tst / corrected) > 130 ) rtst = corrected2 * 19;
+	else if ( (tst / corrected) > 129 ) rtst = corrected2 * 18;   //5
+	else if ( (tst / corrected) > 127 ) rtst = corrected2 * 16;
+	else if ( (tst / corrected) > 125 ) rtst = corrected2 * 14;   //5
+	else if ( (tst / corrected) > 123 ) rtst = corrected2 * 13;
+	else if ( (tst / corrected) > 121 ) rtst = corrected2 * 12;
+	else if ( (tst / corrected) > 120 ) rtst = corrected2 * 11;
+	else if ( (tst / corrected) > 119 ) rtst = corrected2 * 10;   //4
+	else if ( (tst / corrected) > 117 ) rtst = corrected2 * 9;
+	else if ( (tst / corrected) > 116 ) rtst = corrected2 * 8;
+	else if ( (tst / corrected) > 114 ) rtst = corrected2 * 7;
+	else if ( (tst / corrected) > 111 ) rtst = corrected2 * 6;
+	else if ( (tst / corrected) > 103 ) rtst = corrected2 * 5;
+	else if ( (tst / corrected) > 92  ) rtst = corrected2 * 4;
+	else if ( (tst / corrected) > 76  ) rtst = corrected2 * 3;
+	else if ( (tst / corrected) > 57  ) rtst = corrected2 * 2;
+	else if ( (tst / corrected) >= 35 ) rtst = corrected2 * 1;
+	else if ( (tst / corrected) < 17  ) rtst = corrected2 * 0;
+
+	return (int)rtst;
+}
 
 int oldOnline, started;
-static int oldtst, newtst;
+static int oldtst, oldtstR, newtst;
 
 void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 {
         if ( online != oldOnline)
         {
-            memLog->Lines->Add(online);
-            started=1;
-        }
+			memLog->Lines->Add(online);
+			started=1;
+		}
 
-        online = oldOnline;
-
-        if ( started )
-        {
-            ProgressBar1->Position = oldtst;
-
-            if (oldtst > 0)
-            {
-                oldtst = oldtst - 50;
-            }
-
-            if (oldtst+5 <= VuValue)  // up edge reaction
-            {
-                oldtst = VuValue;
-            }
-
-            if ( VuValue < 20 )
-                oldtst=VuValue;
+		online = oldOnline;
 
 
-            //ProgressBar1->Position = TrackBar1->Position;
-            //memLog->Lines->Add(started);
-        }
+		if ( started )
+		{
+
+			if (oldtst > 0)         oldtst = oldtst - 5;
+			if (oldtst < 0)         oldtst = vuValueL;
+			if (oldtst <= vuValueL)  oldtst = vuValueL;
+
+
+		   if (oldtstR > 0)         oldtstR = oldtstR - 5;
+		   if (oldtstR < 0)         oldtstR = vuValueR;
+		   if (oldtstR <= vuValueR)  oldtstR = vuValueR;
+
+		   //oldtst = CorrTabel( oldtst );
+
+
+		   ProgressBar1->Position = oldtst;
+		   ProgressBar2->Position = oldtstR;
+
+		   ProgressBar3->Position = oldtst;
+		   ProgressBar4->Position = oldtstR;
+
+		   ProgressBar5->Position = oldtst;
+		   ProgressBar6->Position = oldtstR;
+
+		   ProgressBar7->Position = oldtst;
+		   ProgressBar8->Position = oldtstR;
+
+		   ProgressBar9->Position = oldtst;
+		   ProgressBar10->Position = oldtstR;
+
+		   ProgressBar11->Position = oldtst;
+		   ProgressBar12->Position = oldtstR;
+
+		   ProgressBar13->Position = oldtst;
+		   ProgressBar14->Position = oldtstR;
+
+		   ProgressBar15->Position = oldtst;
+		   ProgressBar16->Position = oldtstR;
+
+			char Temp[32];
+			sprintf(Temp, "#%04d_%04d\n\r #%04d_%04d", 1088, vuValueL, 1089, vuValueR);
+			memLog->Lines->Add(Temp);
+
+		}
+
+
+
+		double tst=1;
 }
+
+
+
+
+
+
+
+
+
+
 //---------------------------------------------------------------------------
+
+
 
 void __fastcall TWillemForm1::Button1Click(TObject *Sender)
 {
-    WillemForm1->RefreshTimer->Interval = 1000;
-    //Timer1->Enabled=false;
+	static int toggle;
+
+	if( toggle )
+		WillemForm1->RefreshTimer->Enabled = false;
+	else
+		WillemForm1->RefreshTimer->Enabled = true;
+	toggle = !toggle;
 }
 //---------------------------------------------------------------------------
+
+
+
+void __fastcall TWillemForm1::CheckBox1Click(TObject *Sender)
+{
+
+	  if ( CheckBox1->Checked == True )
+	  {
+			plus10dB=1;
+	  }
+	  else
+	  {
+		  plus10dB=0;
+	  }
+	  memLog->Lines->Add(plus10dB);
+
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TWillemForm1::SourceButtonClick(TObject *Sender)
+{
+	union mbn_data d;
+	d.SInt = 1;
+	mbnUpdateSensorData(mbn, 1195, d);
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TWillemForm1::SourceLabelBtnClick(TObject *Sender)
+{
+	union mbn_data d;
+	d.SInt = 1;
+	mbnUpdateSensorData(mbn, 1195, d);
+}
+//---------------------------------------------------------------------------
+
+
 
 

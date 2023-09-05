@@ -131,16 +131,7 @@ __published:	// IDE-managed Components
 	void __fastcall Label6Click(TObject *Sender);
 	void __fastcall Label20Click(TObject *Sender);
 	void __fastcall Label21Click(TObject *Sender);
-	void __fastcall Label25Click(TObject *Sender);
-	void __fastcall Label40Click(TObject *Sender);
-	void __fastcall Label42Click(TObject *Sender);
-	void __fastcall Label29Click(TObject *Sender);
-	void __fastcall Label23Click(TObject *Sender);
-	void __fastcall Label43Click(TObject *Sender);
-	void __fastcall Label44Click(TObject *Sender);
-	void __fastcall Label24Click(TObject *Sender);
-	void __fastcall Label45Click(TObject *Sender);
-	void __fastcall Label41Click(TObject *Sender);
+    void __fastcall Label45Click(TObject *Sender);
 	void __fastcall Label7Click(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);

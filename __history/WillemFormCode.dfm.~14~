@@ -453,7 +453,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label7Click
+    OnClick = Button7Click
   end
   object Label20: TLabel
     Left = 571
@@ -3239,7 +3239,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label25Click
+    OnClick = SourceLabelClick
   end
   object Label29: TLabel
     Left = 602
@@ -3262,7 +3262,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label29Click
+    OnClick = SourceLabelClick
   end
   object Label40: TLabel
     Left = 602
@@ -3285,7 +3285,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label40Click
+    OnClick = SourceLabelClick
   end
   object Label42: TLabel
     Left = 602
@@ -3308,7 +3308,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label42Click
+    OnClick = SourceLabelClick
   end
   object Label23: TLabel
     Left = 721
@@ -3331,7 +3331,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label23Click
+    OnClick = SourceLabelClick
   end
   object Label24: TLabel
     Left = 721
@@ -3354,7 +3354,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label24Click
+    OnClick = SourceLabelClick
   end
   object Label43: TLabel
     Left = 721
@@ -3377,7 +3377,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label43Click
+    OnClick = SourceLabelClick
   end
   object Label44: TLabel
     Left = 721
@@ -3400,7 +3400,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label44Click
+    OnClick = SourceLabelClick
   end
   object Label41: TLabel
     Left = 424
@@ -3423,7 +3423,7 @@ object WillemForm1: TWillemForm1
     ShowHint = True
     Transparent = False
     Layout = tlCenter
-    OnClick = Label41Click
+    OnClick = Button7Click
   end
   object Label45: TLabel
     Left = 571
