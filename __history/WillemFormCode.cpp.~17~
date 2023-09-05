@@ -31,7 +31,7 @@
 TWillemForm1 *WillemForm1;
 
 static int online = 0;
-int checkBox1;
+int plus10dB;
 
 
 
@@ -44,7 +44,7 @@ void mOnlineStatus(struct mbn_handler *mbn, unsigned long addr, char valid)
 
 }
 
-float vuValueL, vuValueR, vuValueL2, vuValueR2;
+int vuValueL, vuValueR, vuValueL2, vuValueR2;
 char bufferVuMeter[32];
 
 
@@ -59,12 +59,11 @@ int mSensorDataChanged(struct mbn_handler *mbn, struct mbn_message *msg, unsigne
 int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data dat)
 {
 
-	if (checkBox1 == 1 )
-	{
-		char Temp[32];
-		sprintf(Temp, "#%04d_%04d", obj,  (int)dat.UInt);
-		WillemForm1->memLog2->Lines->Add(Temp);
-	}
+
+//	char Temp[32];
+//	sprintf(Temp, "#%04d_%04d", obj,  (int)dat.UInt);
+//	WillemForm1->memLog2->Lines->Add(Temp);
+
 
 
 
@@ -397,11 +396,11 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
             lstInterfaces->Items->AddObject(ifdesc, (TObject *)n->name);
         }
 
-		lstInterfaces->ItemIndex = 0;
+        lstInterfaces->ItemIndex = 0;
 
 	}
 
-	UDPEdit->Text = "192.168.1.76";
+	UDPEdit->Text = "192.168.0.222";
 
     memLog->Text = online;
 
@@ -428,7 +427,6 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 	struct mbn_node_info thisnodeB;
 	int cntSwitch;
 	struct mbn_object objects[370];
-	//struct mbn_object objects[350];
 	int cntObject = 0;
 
 
@@ -461,7 +459,7 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 	sprintf(thisnodeB.Name, "Test Node D&R");
 	thisnodeB.ManufacturerID = 0x0001;
 	thisnodeB.ProductID = 0x0022;
-	thisnodeB.UniqueIDPerProduct = 0x110;   //UniqueIDPerProduct
+	thisnodeB.UniqueIDPerProduct = 0x108;   //UniqueIDPerProduct
 	thisnodeB.HardwareMajorRevision = 0;
 	thisnodeB.HardwareMinorRevision = 0;
 	thisnodeB.FirmwareMajorRevision = 1;
@@ -632,14 +630,14 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 
 	// -------------toegevoegde level meter voor mix en monitor bussen----------------
 
-//	/* 1043 - 1063: Stereo Audio level metering for mix or monitor busses */
-//	for (cntvu_busses=0; cntvu_busses<20; cntvu_busses++)
-//	{
-//		sprintf(obj_desc, "Mix or Mon Bus Meter %d Left dB", cntvu_busses+1);
-//		objects[cntObject++] = MBN_OBJ( obj_desc, MBN_DATATYPE_NODATA, MBN_DATATYPE_FLOAT, 2, -50.0, 5.0, -50.0, -50.0);
-//		sprintf(obj_desc, "Mix or Mon Bus Meter %d Right dB", cntvu_busses+1);
-//		objects[cntObject++] = MBN_OBJ( obj_desc, MBN_DATATYPE_NODATA, MBN_DATATYPE_FLOAT, 2, -50.0, 5.0, -50.0, -50.0);
-//	}
+	/* 1043 - 1063: Stereo Audio level metering for mix or monitor busses */
+	for (cntvu_busses=0; cntvu_busses<20; cntvu_busses++)
+	{
+		sprintf(obj_desc, "Mix or Mon Bus Meter %d Left dB", cntvu_busses+1);
+		objects[cntObject++] = MBN_OBJ( obj_desc, MBN_DATATYPE_NODATA, MBN_DATATYPE_FLOAT, 2, -50.0, 5.0, -50.0, -50.0);
+		sprintf(obj_desc, "Mix or Mon Bus Meter %d Right dB", cntvu_busses+1);
+		objects[cntObject++] = MBN_OBJ( obj_desc, MBN_DATATYPE_NODATA, MBN_DATATYPE_FLOAT, 2, -50.0, 5.0, -50.0, -50.0);
+	}
 
 	
 	
@@ -673,7 +671,7 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 
 
 }
-//------------------------- Not used --------------------------------------------------
+//---------------------------------------------------------------------------
 int CorrTabel(double tst)
 {
 	double rtst = 0, corrected=1, corrected2=1;
@@ -735,25 +733,25 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 		if ( started )
 		{
 
-			if (oldtst > 0)         oldtst = oldtst - 3;
+			if (oldtst > 0)         oldtst = oldtst - 5;
 			if (oldtst < 0)         oldtst = vuValueL;
-			if (oldtst < vuValueL)  oldtst = vuValueL;
+			if (oldtst <= vuValueL)  oldtst = vuValueL;
 
 
-		   if (oldtstR > 0)         oldtstR = oldtstR - 3;
+		   if (oldtstR > 0)         oldtstR = oldtstR - 5;
 		   if (oldtstR < 0)         oldtstR = vuValueR;
-		   if (oldtstR < vuValueR)  oldtstR = vuValueR;
+		   if (oldtstR <= vuValueR)  oldtstR = vuValueR;
 
 		   //oldtst = CorrTabel( oldtst );
 
-		   if (oldtst2 > 0)         oldtst2 = oldtst2 - 3;
+		   if (oldtst2 > 0)         oldtst2 = oldtst2 - 5;
 		   if (oldtst2 < 0)         oldtst2 = vuValueL2;
-		   if (oldtst2 < vuValueL2)  oldtst2 = vuValueL2;
+		   if (oldtst2 <= vuValueL2)  oldtst2 = vuValueL2;
 
 
-		   if (oldtstR2 > 0)         oldtstR2 = oldtstR2 - 3;
+		   if (oldtstR2 > 0)         oldtstR2 = oldtstR2 - 5;
 		   if (oldtstR2 < 0)         oldtstR2 = vuValueR2;
-		   if (oldtstR2 < vuValueR2)  oldtstR2 = vuValueR2;
+		   if (oldtstR2 <= vuValueR2)  oldtstR2 = vuValueR2;
 
 
 
@@ -762,38 +760,28 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 
 		   ProgressBar3->Position = oldtst2;
 		   ProgressBar4->Position = oldtstR2;
-//
-//		   ProgressBar5->Position = oldtst;
-//		   ProgressBar6->Position = oldtstR;
-//
-//		   ProgressBar7->Position = oldtst;
-//		   ProgressBar8->Position = oldtstR;
-//
-//		   ProgressBar9->Position = oldtst;
-//		   ProgressBar10->Position = oldtstR;
-//
-//		   ProgressBar11->Position = oldtst;
-//		   ProgressBar12->Position = oldtstR;
-//
-//		   ProgressBar13->Position = oldtst;
-//		   ProgressBar14->Position = oldtstR;
-//
-//		   ProgressBar15->Position = oldtst;
-//		   ProgressBar16->Position = oldtstR;
 
-//			char Temp[32];
-//			sprintf(Temp, "#%04d_%04d\n\r #%04d_%04d", 1088, vuValueL, 1089, vuValueR);
-//			memLog->Lines->Add(Temp);
+		   ProgressBar5->Position = oldtst;
+		   ProgressBar6->Position = oldtstR;
 
+		   ProgressBar7->Position = oldtst;
+		   ProgressBar8->Position = oldtstR;
 
+		   ProgressBar9->Position = oldtst;
+		   ProgressBar10->Position = oldtstR;
 
-			if (checkBox1 == 1 )
-			{
-				char Temp[32];
-				sprintf(Temp, "#%04d_%04d #%04d_%04d", 1088, (int)vuValueL, 1089, (int)vuValueR);
-				memLog->Lines->Add(Temp);
-			}
+		   ProgressBar11->Position = oldtst;
+		   ProgressBar12->Position = oldtstR;
 
+		   ProgressBar13->Position = oldtst;
+		   ProgressBar14->Position = oldtstR;
+
+		   ProgressBar15->Position = oldtst;
+		   ProgressBar16->Position = oldtstR;
+
+			char Temp[32];
+			sprintf(Temp, "#%04d_%04d\n\r #%04d_%04d", 1088, vuValueL, 1089, vuValueR);
+			memLog->Lines->Add(Temp);
 
 		}
 
@@ -832,15 +820,16 @@ void __fastcall TWillemForm1::Button1Click(TObject *Sender)
 void __fastcall TWillemForm1::CheckBox1Click(TObject *Sender)
 {
 
-	if ( CheckBox1->Checked == True )
-	{
-		checkBox1=1;
-	}
-	else
-	{
-	  checkBox1=0;
-	}
-	//memLog->Lines->Add(plus10dB);
+	  if ( CheckBox1->Checked == True )
+	  {
+			plus10dB=1;
+	  }
+	  else
+	  {
+		  plus10dB=0;
+	  }
+	  memLog->Lines->Add(plus10dB);
+
 }
 
 
@@ -982,7 +971,7 @@ void __fastcall TWillemForm1::Label45Click(TObject *Sender)
 void __fastcall TWillemForm1::Label41Click(TObject *Sender)
 {
 	union mbn_data d;
-	d.SInt = 0;
+	d.SInt = 1;
 	mbnUpdateSensorData(mbn, 1073, d);   // Source
 }
 
@@ -1048,70 +1037,3 @@ void __fastcall TWillemForm1::Button4Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TWillemForm1::TrackBar1Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar1->Position;
-	value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1084, d);         // Fader module 1
-}
-
-//---------------------------------------------------------------------------
-
-void __fastcall TWillemForm1::TrackBar2Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar2->Position;
-	value = 0;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1084, d);     // Fader module 2
-}
-
-//---------------------------------------------------------------------------
-
-
-
-
-void __fastcall TWillemForm1::TrackBar3Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar3->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1339, d);            // potential crm phone
-}
-
-
-void __fastcall TWillemForm1::TrackBar4Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar4->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1340, d);        // potential studio phone
-}
-void __fastcall TWillemForm1::TrackBar5Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar5->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1341, d);        // potential crm speakers
-}
-
-
-void __fastcall TWillemForm1::TrackBar6Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar6->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1342, d);        // potential studio speakers
-}

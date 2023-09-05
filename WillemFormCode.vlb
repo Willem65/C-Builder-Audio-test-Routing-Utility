@@ -22,9 +22,6 @@ Coordinates=129,308,55,51
 [ProgressBar3]
 Coordinates=387,308,81,51
 
-[Label3]
-Coordinates=128,369,46,51
-
 [Label2]
 Coordinates=10,369,46,51
 
@@ -36,9 +33,6 @@ Coordinates=546,308,57,51
 
 [ProgressBar4]
 Coordinates=78,247,81,51
-
-[Label1]
-Coordinates=10,308,46,51
 
 [lstInterfaces]
 Coordinates=10,10,84,105

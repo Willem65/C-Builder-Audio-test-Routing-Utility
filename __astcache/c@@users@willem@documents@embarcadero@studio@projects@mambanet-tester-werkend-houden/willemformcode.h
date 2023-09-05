@@ -27,8 +27,6 @@ __published:	// IDE-managed Components
         TLabel *Label22;
         TProgressBar *ProgressBar1;
     TButton *Button1;
-	TLabel *Label1;
-	TLabel *Label3;
 	TTrackBar *TrackBar1;
 	TProgressBar *ProgressBar2;
 	TProgressBar *ProgressBar3;
@@ -74,10 +72,6 @@ __published:	// IDE-managed Components
 	TProgressBar *ProgressBar9;
 	TProgressBar *ProgressBar10;
 	TLabel *Label37;
-	TProgressBar *ProgressBar11;
-	TProgressBar *ProgressBar12;
-	TProgressBar *ProgressBar13;
-	TProgressBar *ProgressBar14;
 	TProgressBar *ProgressBar15;
 	TProgressBar *ProgressBar16;
 	TLabel *Label36;
@@ -116,12 +110,10 @@ __published:	// IDE-managed Components
 	TGroupBox *GroupBox9;
 	TGroupBox *GroupBox10;
 	TGroupBox *GroupBox11;
-	TLabel *Label41;
 	TProgressBar *ProgressBar17;
 	TProgressBar *ProgressBar18;
 	TLabel *Label45;
-	TProgressBar *ProgressBar19;
-	TProgressBar *ProgressBar20;
+	TLabel *Label41;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
@@ -148,6 +140,12 @@ __published:	// IDE-managed Components
 	void __fastcall Button8Click(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall TrackBar1Change(TObject *Sender);
+	void __fastcall TrackBar2Change(TObject *Sender);
+	void __fastcall TrackBar3Change(TObject *Sender);
+	void __fastcall TrackBar4Change(TObject *Sender);
+	void __fastcall TrackBar5Change(TObject *Sender);
+	void __fastcall TrackBar6Change(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
          struct mbn_handler *mbn;
