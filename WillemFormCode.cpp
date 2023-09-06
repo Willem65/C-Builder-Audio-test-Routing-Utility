@@ -44,7 +44,7 @@ void mOnlineStatus(struct mbn_handler *mbn, unsigned long addr, char valid)
 
 }
 
-float vuValueL, vuValueR, vuValueL2, vuValueR2;
+float vuValueL, vuValueR, vuValueL2, vuValueR2, vuValueL3, vuValueR3, vuValueL4, vuValueR4, vuValueL5, vuValueR5, vuValueL6, vuValueR6;
 char bufferVuMeter[32];
 
 
@@ -58,19 +58,19 @@ int mSensorDataChanged(struct mbn_handler *mbn, struct mbn_message *msg, unsigne
 
 int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data dat)
 {
-
-	if (checkBox1 == 1 )
+	if ( obj > 1047 )                // Logger
 	{
-		char Temp[32];
-		sprintf(Temp, "#%04d_%04d", obj,  (int)dat.UInt);
-		WillemForm1->memLog2->Lines->Add(Temp);
+		if (checkBox1 == 1 )
+		{
+			char Temp[32];
+			sprintf(Temp, "#%04d_%04d", obj,  (int)dat.UInt);
+			WillemForm1->memLog2->Lines->Add(Temp);
+		}
 	}
 
 
 
-
-
-
+	//------------------------------------- Vu Meters 1  Links
 	if ( obj == 1036 )
 	{
 
@@ -92,7 +92,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 	else if ( obj == 1037 )
 	{
 
-		int ValueR = (int)dat.Float;
+		int ValueR = (int)dat.Float;             // Rechts
 		if ( ValueR > -50 )
 		{
 
@@ -105,7 +105,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 			vuValueR = 0;
 		}
 	}
-	//--------------------------------------------------------
+	//------------------------------------------ Vu Meters 2    Links
 	if ( obj == 1038 )
 	{
 
@@ -127,7 +127,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 	else if ( obj == 1039 )
 	{
 
-		int ValueR2 = (int)dat.Float;
+		int ValueR2 = (int)dat.Float;         // Rechts
 		if ( ValueR2 > -50 )
 		{
 
@@ -138,6 +138,151 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		else
 		{
 			vuValueR2 = 0;
+		}
+	}
+
+	//------------------------------------------ Vu Meters 3    Links
+	if ( obj == 1040 )
+	{
+
+		int ValueL3 = (int)dat.Float;
+		if ( ValueL3 > -50 )
+		{
+
+			vuValueL3 = 50+dat.Float;
+			vuValueL3 = ((vuValueL3)*10);
+
+		}
+		else
+		{
+			vuValueL3 = 0;
+		}
+
+
+	}
+	else if ( obj == 1041 )
+	{
+
+		int ValueR3 = (int)dat.Float;         // Rechts
+		if ( ValueR3 > -50 )
+		{
+
+			vuValueR3 = 50+dat.Float;
+			vuValueR3 = ((vuValueR3)*10);
+
+		}
+		else
+		{
+			vuValueR3 = 0;
+		}
+	}
+
+	//------------------------------------------ Vu Meters 4    Links
+	if ( obj == 1042 )
+	{
+
+		int ValueL4 = (int)dat.Float;
+		if ( ValueL4 > -50 )
+		{
+
+			vuValueL4 = 50+dat.Float;
+			vuValueL4 = ((vuValueL4)*10);
+
+		}
+		else
+		{
+			vuValueL4 = 0;
+		}
+
+
+	}
+	else if ( obj == 1043 )
+	{
+
+		int ValueR4 = (int)dat.Float;         // Rechts
+		if ( ValueR4 > -50 )
+		{
+
+			vuValueR4 = 50+dat.Float;
+			vuValueR4 = ((vuValueR4)*10);
+
+		}
+		else
+		{
+			vuValueR4 = 0;
+		}
+	}
+
+	//------------------------------------------ Vu Meters 5    Links
+	if ( obj == 1044 )
+	{
+
+		int ValueL5 = (int)dat.Float;
+		if ( ValueL5 > -50 )
+		{
+
+			vuValueL5 = 50+dat.Float;
+			vuValueL5 = ((vuValueL5)*10);
+
+		}
+		else
+		{
+			vuValueL5 = 0;
+		}
+
+
+	}
+	else if ( obj == 1045 )
+	{
+
+		int ValueR5 = (int)dat.Float;         // Rechts
+		if ( ValueR5 > -50 )
+		{
+
+			vuValueR5 = 50+dat.Float;
+			vuValueR5 = ((vuValueR5)*10);
+
+		}
+		else
+		{
+			vuValueR5 = 0;
+		}
+	}
+
+
+	//------------------------------------------ Vu Meters 6    Links
+	if ( obj == 1046 )
+	{
+
+		int ValueL6 = (int)dat.Float;
+		if ( ValueL6 > -50 )
+		{
+
+			vuValueL6 = 50+dat.Float;
+			vuValueL6 = ((vuValueL6)*10);
+
+		}
+		else
+		{
+			vuValueL6 = 0;
+		}
+
+
+	}
+	else if ( obj == 1047 )
+	{
+
+		int ValueR6 = (int)dat.Float;         // Rechts
+		if ( ValueR6 > -50 )
+		{
+
+			vuValueR6 = 50+dat.Float;
+			vuValueR6 = ((vuValueR6)*10);
+
+		}
+		else
+		{
+			vuValueR6 = 0;
 		}
 	}
 
@@ -169,6 +314,40 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		sprintf(buf, "%s", dat.Octets);
 		WillemForm1->LCD2line2->Caption = buf;
 	}
+
+	//else if (obje >= 1138 && obje <= 1191)
+//
+//	else if (obj == 1138 )
+//	{
+//		//PGM label
+//		if (dat.State)
+//		{
+//			WillemForm1->Label1->Caption="PGM";
+//		}
+//		else
+//		{
+//			WillemForm1->Label1->Caption="";
+//		}
+//	}
+//
+//	else if (obj == 1144 )
+//	{
+//		if (dat.State)
+//			WillemForm1->Label3->Caption="SUB";
+//		else
+//			WillemForm1->Label3->Caption="";
+//	}
+//	else if (obj == 1144 )
+//	{
+//		if (dat.State)
+//			WillemForm1->Label46->Caption="SUB";
+//		else
+//			WillemForm1->Label46->Caption="";
+//	}
+
+	//---------------------------------------------------------------------------
+	// labels als knoppen
+
 	else if (obj == 1195)      //source
 	{
 
@@ -246,7 +425,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 
 
 
-
+	// labels als knoppen
 	else if (obj == 1230)    //prog mon1 crm
 	{
 
@@ -297,7 +476,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 
 
 
-
+	// labels als knoppen
 	else if (obj == 1231)    //prog mon1 crm
 	{
 
@@ -727,6 +906,7 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
         {
 			memLog->Lines->Add(online);
 			started=1;
+			//WillemForm1->Label7->Click();
 		}
 
 		online = oldOnline;
@@ -763,14 +943,14 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 		   ProgressBar3->Position = oldtst2;
 		   ProgressBar4->Position = oldtstR2;
 //
-//		   ProgressBar5->Position = oldtst;
-//		   ProgressBar6->Position = oldtstR;
+		   ProgressBar5->Position = vuValueL4;
+		   ProgressBar6->Position = vuValueR4;
 //
-//		   ProgressBar7->Position = oldtst;
-//		   ProgressBar8->Position = oldtstR;
+		   ProgressBar7->Position = vuValueL5;
+		   ProgressBar8->Position = vuValueR5;
 //
-//		   ProgressBar9->Position = oldtst;
-//		   ProgressBar10->Position = oldtstR;
+		   ProgressBar9->Position = vuValueL6;
+		   ProgressBar10->Position = vuValueR6;
 //
 //		   ProgressBar11->Position = oldtst;
 //		   ProgressBar12->Position = oldtstR;
@@ -778,12 +958,13 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 //		   ProgressBar13->Position = oldtst;
 //		   ProgressBar14->Position = oldtstR;
 //
-//		   ProgressBar15->Position = oldtst;
-//		   ProgressBar16->Position = oldtstR;
+		   ProgressBar15->Position = vuValueL3;
+		   ProgressBar16->Position = vuValueR3;
 
 //			char Temp[32];
 //			sprintf(Temp, "#%04d_%04d\n\r #%04d_%04d", 1088, vuValueL, 1089, vuValueR);
 //			memLog->Lines->Add(Temp);
+
 
 
 
@@ -793,6 +974,7 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 				sprintf(Temp, "#%04d_%04d #%04d_%04d", 1088, (int)vuValueL, 1089, (int)vuValueR);
 				memLog->Lines->Add(Temp);
 			}
+
 
 
 		}
@@ -817,13 +999,13 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 
 void __fastcall TWillemForm1::Button1Click(TObject *Sender)
 {
-	static int toggle;
-
-	if( toggle )
-		WillemForm1->RefreshTimer->Enabled = false;
-	else
-		WillemForm1->RefreshTimer->Enabled = true;
-	toggle = !toggle;
+//	static int toggle;
+//
+//	if( toggle )
+//		WillemForm1->RefreshTimer->Enabled = false;
+//	else
+//		WillemForm1->RefreshTimer->Enabled = true;
+//	toggle = !toggle;
 }
 //---------------------------------------------------------------------------
 
@@ -1075,43 +1257,7 @@ void __fastcall TWillemForm1::TrackBar2Change(TObject *Sender)
 
 
 
-void __fastcall TWillemForm1::TrackBar3Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar3->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1339, d);            // potential crm phone
-}
 
 
-void __fastcall TWillemForm1::TrackBar4Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar4->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1340, d);        // potential studio phone
-}
-void __fastcall TWillemForm1::TrackBar5Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar5->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1341, d);        // potential crm speakers
-}
 
 
-void __fastcall TWillemForm1::TrackBar6Change(TObject *Sender)
-{
-	union mbn_data d;
-	int value = WillemForm1->TrackBar6->Position;
-	//value = 1023 - value;
-	d.SInt = value;
-
-	mbnUpdateSensorData(mbn, 1342, d);        // potential studio speakers
-}

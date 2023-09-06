@@ -132,6 +132,12 @@
             <BuildOrder>5</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
+        <CppCompile Include="MonitorPotentials.cpp">
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <None Include="MonitorPotentials.h">
+            <BuildOrder>7</BuildOrder>
+        </None>
         <CppCompile Include="VuMeter.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>

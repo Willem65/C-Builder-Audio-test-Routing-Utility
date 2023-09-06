@@ -59,9 +59,6 @@ Coordinates=10,125,53,51
 [Button5]
 Coordinates=582,186,53,51
 
-[GroupBox1]
-Coordinates=422,186,70,51
-
 [Button6]
 Coordinates=421,10,53,51
 
@@ -159,5 +156,5 @@ Coordinates=486,125,46,51
 Coordinates=502,186,70,51
 
 []
-Coordinates=463,369,64,33
+Coordinates=422,186,70,51
 

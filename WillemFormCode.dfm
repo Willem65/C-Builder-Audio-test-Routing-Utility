@@ -41,12 +41,12 @@ object WillemForm1: TWillemForm1
   object Label5: TLabel
     Left = 420
     Top = 7
-    Width = 216
+    Width = 228
     Height = 13
-    Caption = 'Module2 Pre Fader   As Probe Meter '#9786
+    Caption = 'Module2 Pre Fader     As Probe Meter '#9786
   end
   object LCD1line1: TLabel
-    Left = 270
+    Left = 274
     Top = 25
     Width = 71
     Height = 21
@@ -263,11 +263,11 @@ object WillemForm1: TWillemForm1
     Caption = 'Line 2 always to min'
   end
   object Label32: TLabel
-    Left = 669
-    Top = 87
-    Width = 30
+    Left = 675
+    Top = 121
+    Width = 144
     Height = 13
-    Caption = 'VU on'
+    Caption = 'VU for example on one of'
   end
   object Label33: TLabel
     Left = 268
@@ -298,11 +298,11 @@ object WillemForm1: TWillemForm1
     Caption = 'VU Mon2Bus'
   end
   object Label36: TLabel
-    Left = 699
-    Top = 87
-    Width = 66
+    Left = 689
+    Top = 133
+    Width = 84
     Height = 13
-    Caption = ' the MixBus'
+    Caption = ' the MixBusses'
   end
   object Label38: TLabel
     Left = 259
@@ -319,8 +319,8 @@ object WillemForm1: TWillemForm1
     Caption = 'We gonne use this for probing the audio'
   end
   object LCD1line2: TLabel
-    Left = 270
-    Top = 45
+    Left = 274
+    Top = 44
     Width = 71
     Height = 23
     Alignment = taCenter
@@ -506,7 +506,7 @@ object WillemForm1: TWillemForm1
     Left = 283
     Top = 112
     Width = 48
-    Height = 293
+    Height = 298
     Picture.Data = {
       07544269746D6170D6A70000424DD6A700000000000036000000280000003000
       00002A0100000100180000000000A0A70000C0320000C0320000000000000000
@@ -3434,6 +3434,125 @@ object WillemForm1: TWillemForm1
     Layout = tlCenter
     OnClick = Label41Click
   end
+  object Label1: TLabel
+    Left = 247
+    Top = 400
+    Width = 24
+    Height = 13
+    Caption = '1036'
+  end
+  object Label3: TLabel
+    Left = 340
+    Top = 401
+    Width = 24
+    Height = 13
+    Caption = '1037'
+  end
+  object Label46: TLabel
+    Left = 400
+    Top = 402
+    Width = 24
+    Height = 13
+    Caption = '1038'
+  end
+  object Label47: TLabel
+    Left = 502
+    Top = 403
+    Width = 24
+    Height = 13
+    Caption = '1039'
+  end
+  object Label48: TLabel
+    Left = 340
+    Top = 437
+    Width = 24
+    Height = 13
+    Caption = '1040'
+  end
+  object Label49: TLabel
+    Left = 340
+    Top = 448
+    Width = 24
+    Height = 13
+    Caption = '1041'
+  end
+  object Label50: TLabel
+    Left = 657
+    Top = 136
+    Width = 24
+    Height = 13
+    Caption = '1042'
+  end
+  object Label51: TLabel
+    Left = 657
+    Top = 146
+    Width = 24
+    Height = 13
+    Caption = '1043'
+  end
+  object Label52: TLabel
+    Left = 685
+    Top = 315
+    Width = 24
+    Height = 13
+    Caption = '1044'
+  end
+  object Label53: TLabel
+    Left = 685
+    Top = 325
+    Width = 24
+    Height = 13
+    Caption = '1045'
+  end
+  object Label54: TLabel
+    Left = 803
+    Top = 316
+    Width = 24
+    Height = 13
+    Caption = '1046'
+  end
+  object Label55: TLabel
+    Left = 803
+    Top = 326
+    Width = 24
+    Height = 13
+    Caption = '1047'
+  end
+  object Label56: TLabel
+    Left = 651
+    Top = 28
+    Width = 150
+    Height = 20
+    Alignment = taCenter
+    Caption = 'Audio routing test utility'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label58: TLabel
+    Left = 340
+    Top = 459
+    Width = 36
+    Height = 13
+    Caption = 'Vu PFL'
+  end
+  object Label59: TLabel
+    Left = 130
+    Top = 4
+    Width = 75
+    Height = 20
+    Alignment = taCenter
+    Caption = 'Start Here !'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Arial Unicode MS'
+    Font.Style = []
+    ParentFont = False
+  end
   object GroupBox3: TGroupBox
     Left = 438
     Top = 438
@@ -3465,10 +3584,10 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 6
-    Top = 109
+    Left = 7
+    Top = 108
     Width = 218
-    Height = 244
+    Height = 241
     Anchors = []
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -3478,32 +3597,30 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 5
   end
   object UDPEdit: TEdit
     Left = 3
     Top = 28
-    Width = 103
+    Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
   end
   object btnOpen: TButton
-    Left = 126
-    Top = 28
+    Left = 133
+    Top = 29
     Width = 71
     Height = 21
     Anchors = []
-    Caption = 'Open'
+    Caption = 'Start'
     TabOrder = 2
     OnClick = btnOpenClick
-    ExplicitLeft = 125
   end
   object lstInterfaces: TComboBox
     Left = 2
     Top = 61
-    Width = 104
+    Width = 125
     Height = 21
     Style = csDropDownList
     Anchors = []
@@ -3519,17 +3636,18 @@ object WillemForm1: TWillemForm1
     Height = 289
     Max = 550
     Orientation = pbVertical
-    Position = 55
+    Position = 50
     Smooth = True
     TabOrder = 4
   end
   object Button1: TButton
-    Left = 125
-    Top = 61
+    Left = 17
+    Top = 85
     Width = 71
     Height = 21
     Caption = 'Start/Stop'
     TabOrder = 5
+    Visible = False
     OnClick = Button1Click
   end
   object ProgressBar2: TProgressBar
@@ -3539,7 +3657,7 @@ object WillemForm1: TWillemForm1
     Height = 289
     Max = 550
     Orientation = pbVertical
-    Position = 55
+    Position = 50
     Smooth = True
     TabOrder = 6
   end
@@ -3550,7 +3668,7 @@ object WillemForm1: TWillemForm1
     Height = 288
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 7
   end
@@ -3561,13 +3679,13 @@ object WillemForm1: TWillemForm1
     Height = 288
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 8
   end
   object Button3: TButton
-    Left = 267
-    Top = 77
+    Left = 273
+    Top = 76
     Width = 17
     Height = 17
     Caption = '-'
@@ -3584,8 +3702,8 @@ object WillemForm1: TWillemForm1
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 322
-    Top = 77
+    Left = 328
+    Top = 76
     Width = 17
     Height = 17
     Caption = '+'
@@ -3602,8 +3720,8 @@ object WillemForm1: TWillemForm1
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 295
-    Top = 77
+    Left = 301
+    Top = 76
     Width = 17
     Height = 17
     Caption = 'ok'
@@ -3632,7 +3750,7 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 6
+    Left = 7
     Top = 376
     Width = 218
     Height = 294
@@ -3645,28 +3763,28 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 5
+    ExplicitLeft = 6
     ExplicitTop = 375
   end
   object ProgressBar5: TProgressBar
-    Left = 651
-    Top = 79
+    Left = 657
+    Top = 113
     Width = 7
     Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 19
   end
   object ProgressBar6: TProgressBar
-    Left = 659
-    Top = 79
+    Left = 665
+    Top = 113
     Width = 7
     Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 20
   end
@@ -3674,10 +3792,10 @@ object WillemForm1: TWillemForm1
     Left = 687
     Top = 292
     Width = 7
-    Height = 51
+    Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 21
   end
@@ -3685,10 +3803,10 @@ object WillemForm1: TWillemForm1
     Left = 694
     Top = 292
     Width = 7
-    Height = 51
+    Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 22
   end
@@ -3696,10 +3814,10 @@ object WillemForm1: TWillemForm1
     Left = 805
     Top = 294
     Width = 7
-    Height = 51
+    Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 23
   end
@@ -3707,10 +3825,10 @@ object WillemForm1: TWillemForm1
     Left = 812
     Top = 294
     Width = 7
-    Height = 51
+    Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 24
   end
@@ -3721,7 +3839,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 25
   end
@@ -3732,7 +3850,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     Max = 550
     Orientation = pbVertical
-    Position = 500
+    Position = 50
     Smooth = True
     TabOrder = 26
   end
@@ -3746,8 +3864,8 @@ object WillemForm1: TWillemForm1
     OnClick = CheckBox1Click
   end
   object GroupBox7: TGroupBox
-    Left = 376
-    Top = 1
+    Left = 384
+    Top = 3
     Width = 9
     Height = 645
     Caption = 'GroupBox6'
@@ -3757,8 +3875,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 28
   end
   object GroupBox5: TGroupBox
-    Left = 528
-    Top = 0
+    Left = 541
+    Top = 2
     Width = 9
     Height = 648
     Caption = 'GroupBox6'
@@ -3766,20 +3884,9 @@ object WillemForm1: TWillemForm1
     ParentBackground = False
     ParentColor = False
     TabOrder = 29
-    object GroupBox1: TGroupBox
-      Left = 0
-      Top = -1
-      Width = 9
-      Height = 646
-      Caption = 'GroupBox6'
-      Color = clMoneyGreen
-      ParentBackground = False
-      ParentColor = False
-      TabOrder = 0
-    end
   end
   object GroupBox6: TGroupBox
-    Left = 235
+    Left = 229
     Top = 0
     Width = 9
     Height = 645
@@ -3789,24 +3896,13 @@ object WillemForm1: TWillemForm1
     ParentColor = False
     TabOrder = 30
   end
-  object GroupBox8: TGroupBox
-    Left = 398
-    Top = -1
-    Width = 9
-    Height = 648
-    Caption = 'GroupBox6'
-    Color = clMoneyGreen
-    ParentBackground = False
-    ParentColor = False
-    TabOrder = 31
-  end
   object TrackBar3: TTrackBar
     Left = 611
     Top = 489
     Width = 64
     Height = 20
     Max = 1023
-    TabOrder = 32
+    TabOrder = 31
     OnChange = TrackBar3Change
   end
   object TrackBar4: TTrackBar
@@ -3815,7 +3911,7 @@ object WillemForm1: TWillemForm1
     Width = 64
     Height = 20
     Max = 1023
-    TabOrder = 33
+    TabOrder = 32
     OnChange = TrackBar4Change
   end
   object TrackBar5: TTrackBar
@@ -3824,7 +3920,7 @@ object WillemForm1: TWillemForm1
     Width = 64
     Height = 20
     Max = 1023
-    TabOrder = 34
+    TabOrder = 33
     OnChange = TrackBar5Change
   end
   object TrackBar6: TTrackBar
@@ -3833,7 +3929,7 @@ object WillemForm1: TWillemForm1
     Width = 64
     Height = 20
     Max = 1023
-    TabOrder = 35
+    TabOrder = 34
     OnChange = TrackBar6Change
   end
   object GroupBox2: TGroupBox
@@ -3845,7 +3941,7 @@ object WillemForm1: TWillemForm1
     Color = clMoneyGreen
     ParentBackground = False
     ParentColor = False
-    TabOrder = 36
+    TabOrder = 35
   end
   object GroupBox9: TGroupBox
     Left = 830
@@ -3856,7 +3952,7 @@ object WillemForm1: TWillemForm1
     Color = clMoneyGreen
     ParentBackground = False
     ParentColor = False
-    TabOrder = 37
+    TabOrder = 36
   end
   object GroupBox10: TGroupBox
     Left = 571
@@ -3866,7 +3962,7 @@ object WillemForm1: TWillemForm1
     Color = clMoneyGreen
     ParentBackground = False
     ParentColor = False
-    TabOrder = 38
+    TabOrder = 37
   end
   object GroupBox11: TGroupBox
     Left = 572
@@ -3876,29 +3972,7 @@ object WillemForm1: TWillemForm1
     Color = clMoneyGreen
     ParentBackground = False
     ParentColor = False
-    TabOrder = 39
-  end
-  object ProgressBar17: TProgressBar
-    Left = 651
-    Top = 106
-    Width = 7
-    Height = 24
-    Max = 550
-    Orientation = pbVertical
-    Position = 500
-    Smooth = True
-    TabOrder = 40
-  end
-  object ProgressBar18: TProgressBar
-    Left = 659
-    Top = 106
-    Width = 7
-    Height = 24
-    Max = 550
-    Orientation = pbVertical
-    Position = 500
-    Smooth = True
-    TabOrder = 41
+    TabOrder = 38
   end
   object TrackBar1: TTrackBar
     Left = 296
@@ -3911,13 +3985,13 @@ object WillemForm1: TWillemForm1
     ParentShowHint = False
     ShowHint = False
     ShowSelRange = False
-    TabOrder = 42
+    TabOrder = 39
     OnChange = TrackBar1Change
   end
   object RefreshTimer: TTimer
     Interval = 1
     OnTimer = RefreshTimerTimer
-    Left = 754
-    Top = 16
+    Left = 162
+    Top = 58
   end
 end
