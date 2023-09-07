@@ -125,6 +125,11 @@ __published:	// IDE-managed Components
 	TLabel *Label56;
 	TLabel *Label58;
 	TLabel *Label59;
+	TGroupBox *GroupBox1;
+	TLabel *Label60;
+	TLabel *Label61;
+	TButton *Button2;
+	TTimer *TimerStartDelay;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
@@ -157,6 +162,7 @@ __published:	// IDE-managed Components
 	void __fastcall TrackBar4Change(TObject *Sender);
 	void __fastcall TrackBar5Change(TObject *Sender);
 	void __fastcall TrackBar6Change(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
          struct mbn_handler *mbn;

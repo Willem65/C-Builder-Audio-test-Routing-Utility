@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #ifndef WillemFormCodeH
 #define WillemFormCodeH
@@ -91,7 +91,6 @@ __published:	// IDE-managed Components
 	TImage *Image2;
 	TGroupBox *GroupBox5;
 	TGroupBox *GroupBox6;
-	TGroupBox *GroupBox8;
 	TLabel *Label25;
 	TLabel *Label29;
 	TLabel *Label40;
@@ -104,16 +103,33 @@ __published:	// IDE-managed Components
 	TTrackBar *TrackBar4;
 	TTrackBar *TrackBar5;
 	TTrackBar *TrackBar6;
-	TGroupBox *GroupBox1;
 	TGroupBox *GroupBox2;
 	TGroupBox *GroupBox9;
 	TGroupBox *GroupBox10;
 	TGroupBox *GroupBox11;
-	TProgressBar *ProgressBar17;
-	TProgressBar *ProgressBar18;
 	TLabel *Label45;
 	TLabel *Label41;
 	TTrackBar *TrackBar1;
+	TLabel *Label1;
+	TLabel *Label3;
+	TLabel *Label46;
+	TLabel *Label47;
+	TLabel *Label48;
+	TLabel *Label49;
+	TLabel *Label50;
+	TLabel *Label51;
+	TLabel *Label52;
+	TLabel *Label53;
+	TLabel *Label54;
+	TLabel *Label55;
+	TLabel *Label56;
+	TLabel *Label58;
+	TLabel *Label59;
+	TGroupBox *GroupBox1;
+	TLabel *Label60;
+	TLabel *Label61;
+	TButton *Button2;
+	TTimer *TimerStartDelay;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
@@ -133,7 +149,7 @@ __published:	// IDE-managed Components
 	void __fastcall Label24Click(TObject *Sender);
 	void __fastcall Label45Click(TObject *Sender);
 	void __fastcall Label41Click(TObject *Sender);
-	void __fastcall Label7Click(TObject *Sender);
+    void __fastcall Label7Click(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -146,6 +162,7 @@ __published:	// IDE-managed Components
 	void __fastcall TrackBar4Change(TObject *Sender);
 	void __fastcall TrackBar5Change(TObject *Sender);
 	void __fastcall TrackBar6Change(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
          struct mbn_handler *mbn;

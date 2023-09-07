@@ -6,7 +6,11 @@
 #define MBN_VARARG
 
 #include <stdio.h>
-//#include <string>
+#include <iostream>
+#include <fstream>
+
+
+#include <string>
 //#include <sstream>
 //#include <stdarg.h>
 //#include <string.h>
@@ -580,10 +584,29 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 
 	}
 
-	UDPEdit->Text = "192.168.1.76";
 
-    memLog->Text = online;
+	//----------------------------------------------------- Read from file
+	std::string fileContent;
+	std::ifstream inputFile;
 
+	inputFile.open("ip.txt");
+
+	if (inputFile.is_open())
+	{
+		// Read data from the file
+		std::string line;
+		while (std::getline(inputFile, line)) {
+			fileContent += line + "\n";
+		}
+		inputFile.close();
+	}
+	else
+		std::cout << "Unable to open the file." << std::endl;
+
+
+	UDPEdit->Text = fileContent.c_str();
+	memLog->Text = online;
+	//--------------------------------------------------------
 
 }
 //---------------------------------------------------------------------------
@@ -612,13 +635,38 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 
 
  
-	String udpText = UDPEdit->Text;
+	String s = UDPEdit->Text;
 
-	//AnsiString udpText = UDPEdit->Text;
+	//AnsiString s = UDPEdit->Text;
+
+	//UnicodeString s = UDPEdit->Text;
+
+
+
+
+
+	//AnsiString udpText = "192.168.1.76";
 
 	//UnicodeString udpText = UDPEdit->Text;
 
-	StrPCopy(Temp, udpText);
+	int t = s.Length()	;
+
+	StrPCopy(Temp, s.SubString1(0,t-1));
+
+
+
+//	//------------------------------------------- write to file
+//	std::ofstream outputFile;
+//	outputFile.open("ip.txt");
+//
+//	if (outputFile.is_open())
+//	{
+//		outputFile << Temp << std::endl;
+//		outputFile.close();
+//	}
+//	else
+//		std::cout << "Unable to open the file." << std::endl;
+//	//----------------------------------------------------------------
 
 
    itf = mbnUDPOpen(Temp, strdup("34848"), NULL, error);  // Maak verbinding met ethernet  // strdup( ) handige functie
@@ -992,7 +1040,6 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 
 
 
-
 //---------------------------------------------------------------------------
 
 
@@ -1249,7 +1296,7 @@ void __fastcall TWillemForm1::TrackBar2Change(TObject *Sender)
 	value = 0;
 	d.SInt = value;
 
-	mbnUpdateSensorData(mbn, 1084, d);     // Fader module 2
+	mbnUpdateSensorData(mbn, 1085, d);     // Fader module 2
 }
 
 //---------------------------------------------------------------------------
@@ -1258,6 +1305,26 @@ void __fastcall TWillemForm1::TrackBar2Change(TObject *Sender)
 
 
 
+
+
+
+void __fastcall TWillemForm1::Button2Click(TObject *Sender)
+{
+//	 std::ofstream outputFile;
+//	 outputFile.open("example.txt");
+//	 if (outputFile.is_open())
+//	 {
+//		outputFile << "Hello, World!" << std::endl;
+//		outputFile << "This is an example text." << std::endl;
+//		outputFile.close();
+//	 }
+//	 else
+//	 {
+//		// Failed to open the file
+//		std::cout << "Unable to open the file." << std::endl;
+//	 }
+}
+//---------------------------------------------------------------------------
 
 
 
