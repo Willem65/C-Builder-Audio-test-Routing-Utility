@@ -124,7 +124,6 @@ __published:	// IDE-managed Components
 	TLabel *Label55;
 	TLabel *Label56;
 	TLabel *Label58;
-	TLabel *Label59;
 	TGroupBox *GroupBox1;
 	TLabel *Label60;
 	TLabel *Label61;
@@ -163,10 +162,12 @@ __published:	// IDE-managed Components
 	void __fastcall TrackBar5Change(TObject *Sender);
 	void __fastcall TrackBar6Change(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall TimerStartDelayTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-         struct mbn_handler *mbn;
-         struct mbn_if_ethernet *iflist;
+
+		 struct mbn_handler *mbn;
+		 struct mbn_if_ethernet *iflist;
         __fastcall TWillemForm1(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

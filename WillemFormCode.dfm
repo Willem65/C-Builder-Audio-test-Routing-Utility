@@ -19,13 +19,12 @@ object WillemForm1: TWillemForm1
     675)
   TextHeight = 13
   object Label2: TLabel
-    Left = 660
-    Top = 51
+    Left = 656
+    Top = 40
     Width = 54
     Height = 13
     Anchors = []
     Caption = 'Interface'
-    ExplicitLeft = 687
   end
   object Label22: TLabel
     Left = 658
@@ -3548,22 +3547,6 @@ object WillemForm1: TWillemForm1
     Height = 13
     Caption = 'Vu PFL'
   end
-  object Label59: TLabel
-    Left = 774
-    Top = 0
-    Width = 75
-    Height = 20
-    Alignment = taCenter
-    Anchors = []
-    Caption = 'Start Here !'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Arial Unicode MS'
-    Font.Style = []
-    ParentFont = False
-    ExplicitLeft = 806
-  end
   object Label60: TLabel
     Left = 191
     Top = 16
@@ -3586,8 +3569,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 16
   end
   object TrackBar2: TTrackBar
-    Left = 224
-    Top = 449
+    Left = 226
+    Top = 446
     Width = 29
     Height = 190
     Cursor = crHandPoint
@@ -3595,7 +3578,7 @@ object WillemForm1: TWillemForm1
     Min = -1023
     Orientation = trVertical
     ParentShowHint = False
-    Position = -1000
+    Position = -1001
     ShowHint = False
     ShowSelRange = False
     TabOrder = 9
@@ -3609,8 +3592,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 644
-    Top = 105
+    Left = 643
+    Top = 104
     Width = 218
     Height = 241
     Anchors = []
@@ -3622,32 +3605,30 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 674
+    ExplicitLeft = 640
   end
   object UDPEdit: TEdit
-    Left = 653
-    Top = 22
+    Left = 652
+    Top = 19
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
-    ExplicitLeft = 681
   end
   object btnOpen: TButton
-    Left = 776
-    Top = 21
+    Left = 784
+    Top = 18
     Width = 71
-    Height = 21
+    Height = 23
     Anchors = []
     Caption = 'Start'
     TabOrder = 2
     OnClick = btnOpenClick
-    ExplicitLeft = 808
   end
   object lstInterfaces: TComboBox
-    Left = 653
-    Top = 69
+    Left = 652
+    Top = 53
     Width = 125
     Height = 21
     Style = csDropDownList
@@ -3656,7 +3637,6 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
-    ExplicitLeft = 681
   end
   object ProgressBar1: TProgressBar
     Left = 29
@@ -3670,16 +3650,14 @@ object WillemForm1: TWillemForm1
     TabOrder = 4
   end
   object Button1: TButton
-    Left = 777
-    Top = 69
-    Width = 71
+    Left = 653
+    Top = 78
+    Width = 85
     Height = 21
     Anchors = []
-    Caption = 'Start/Stop'
+    Caption = 'init faders'
     TabOrder = 5
-    Visible = False
     OnClick = Button1Click
-    ExplicitLeft = 809
   end
   object ProgressBar2: TProgressBar
     Left = 103
@@ -3781,7 +3759,7 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 642
+    Left = 641
     Top = 374
     Width = 218
     Height = 294
@@ -3794,7 +3772,8 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 672
+    ExplicitLeft = 638
+    ExplicitTop = 373
   end
   object ProgressBar5: TProgressBar
     Left = 428
@@ -3886,14 +3865,15 @@ object WillemForm1: TWillemForm1
   end
   object CheckBox1: TCheckBox
     Left = 807
-    Top = 351
+    Top = 352
     Width = 87
     Height = 20
     Anchors = []
     Caption = 'Debug'
     TabOrder = 27
     OnClick = CheckBox1Click
-    ExplicitLeft = 840
+    ExplicitLeft = 803
+    ExplicitTop = 351
   end
   object GroupBox7: TGroupBox
     Left = 155
@@ -4032,13 +4012,12 @@ object WillemForm1: TWillemForm1
     TabOrder = 40
   end
   object Button2: TButton
-    Left = 783
-    Top = 45
-    Width = 57
-    Height = 22
-    Caption = 'Test'
+    Left = 784
+    Top = 77
+    Width = 71
+    Height = 23
+    Caption = 'Settings'
     TabOrder = 41
-    Visible = False
     OnClick = Button2Click
   end
   object RefreshTimer: TTimer
@@ -4048,7 +4027,9 @@ object WillemForm1: TWillemForm1
     Top = 61
   end
   object TimerStartDelay: TTimer
-    Interval = 2000
+    Enabled = False
+    Interval = 1
+    OnTimer = TimerStartDelayTimer
     Left = 532
     Top = 60
   end
