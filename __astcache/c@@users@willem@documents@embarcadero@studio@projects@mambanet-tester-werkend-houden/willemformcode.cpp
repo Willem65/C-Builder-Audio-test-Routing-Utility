@@ -18,9 +18,10 @@
 
 #include "mbn.h" 
 #include "WillemFormCode.h"
+#include "MonitorPotentials.h"
 
-
-
+int trackBar3Position, faderPosition;
+unsigned int count, count1, count2, toestand;
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -36,8 +37,8 @@ TWillemForm1 *WillemForm1;
 
 static int online = 0;
 int checkBox1;
-
-
+//extern unsigned int count, count1, count2, toestand;
+//int trackBar3Position, faderPosition;
 
 
 //  Callback functies
@@ -529,7 +530,8 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 
 
 
-   // ---------------------------- Oled Log Data to memLog2 -------------------------------------------
+// ---------------------------- Oled Log Data to memLog2 -------------------------------------------
+//
 //	if (obj >= 1036 && obj <= 1047)
 //	{
 //		char Temp[32];
@@ -585,27 +587,92 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 	}
 
 
+	// iterate through all controls on Form1  TWillemForm1->ControlCount
+
+	for (int i = 0; i < WillemForm1->ControlCount ; i++)
+	{
+		// disable the control by setting Enabled property to false
+
+		WillemForm1->Controls[i]->Enabled = false;
+
+	}
+
+	CheckBox1->Checked = true;
+
+		checkBox1=1;
+
+
+	btnOpen->Enabled = true;
+	UDPEdit->Enabled = true;
+	Button2->Enabled = true;
+	Button9->Enabled = true;
+	Button10->Enabled = true;
+	Button11->Enabled = true;
+    Button12->Enabled = true;
+
 	//----------------------------------------------------- Read from file
 	std::string fileContent;
-	std::ifstream inputFile;
+	std::ifstream file;
+	//std::ifstream inputFile;
+	std::string ipString;
+	std::string crmStdPot;
+	std::string	faders;
 
-	inputFile.open("ip.txt");
+	char Temp[16];
 
-	if (inputFile.is_open())
-	{
-		// Read data from the file
+   file.open("settings.txt");
+
+
+   if (file.is_open())
+   {
 		std::string line;
-		while (std::getline(inputFile, line)) {
-			fileContent += line + "\n";
+
+		while (std::getline(file, line))
+		{
+			if (line.find("ip address  = ") != std::string::npos)
+			{
+				ipString = line.c_str();
+			}
+			if (line.find("monitorPots = ") != std::string::npos)
+			{
+				crmStdPot = line.c_str();
+			}
+			if (line.find("faders      = ") != std::string::npos)
+			{
+				faders = line.c_str();
+			}
 		}
-		inputFile.close();
+
+		file.close();
 	}
 	else
-		std::cout << "Unable to open the file." << std::endl;
+	{
+		std::cout << "Unable to open file ip.txt" << std::endl;
+	}
 
+	String s = ipString.c_str();
+	int text = s.Length();
+	StrPCopy(Temp, s.SubString1( 15 , text-2 ));
 
-	UDPEdit->Text = fileContent.c_str();
+	UDPEdit->Text = Temp;
 	memLog->Text = online;
+
+	String s2 = ipString.c_str();
+	int text2 = s2.Length();
+	StrPCopy(Temp, s2.SubString1( 15 , text2-2 ));
+	memLog->Lines->Add(Temp);
+
+	String s3 = crmStdPot.c_str();
+	int text3 = s3.Length();
+	StrPCopy(Temp, s3.SubString1( 15 , text3-2 ));
+	memLog->Lines->Add(Temp);
+	trackBar3Position = StrToInt(Temp);
+
+	String s4 = faders.c_str();
+	int text4 = s4.Length();
+	StrPCopy(Temp, s4.SubString1( 15 , text4-2 ));
+	memLog->Lines->Add(Temp);
+	faderPosition = StrToInt(Temp);
 	//--------------------------------------------------------
 
 }
@@ -614,6 +681,12 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 {
 
+
+ 	for (int i = 0; i < WillemForm1->ControlCount ; i++)
+	{
+		// disable the control by setting Enabled property to false
+		WillemForm1->Controls[i]->Enabled = true;
+	}
 
 
 	int cnt;
@@ -641,7 +714,7 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 
 	//UnicodeString s = UDPEdit->Text;
 
-
+	StrPCopy(Temp, s);
 
 
 
@@ -649,9 +722,9 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 
 	//UnicodeString udpText = UDPEdit->Text;
 
-	int t = s.Length()	;
+	//int text = s.Length();
 
-	StrPCopy(Temp, s.SubString1(0,t-1));
+	//StrPCopy(Temp, s.SubString1( 2 , text-1 ));
 
 
 
@@ -955,6 +1028,8 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 			memLog->Lines->Add(online);
 			started=1;
 			//WillemForm1->Label7->Click();
+			TimerStartDelay->Enabled = true;
+
 		}
 
 		online = oldOnline;
@@ -962,6 +1037,7 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 
 		if ( started )
 		{
+			//RefreshTimer->Enabled = false;
 
 			if (oldtst > 0)         oldtst = oldtst - 3;
 			if (oldtst < 0)         oldtst = vuValueL;
@@ -1016,12 +1092,12 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 
 
 
-			if (checkBox1 == 1 )
-			{
-				char Temp[32];
-				sprintf(Temp, "#%04d_%04d #%04d_%04d", 1088, (int)vuValueL, 1089, (int)vuValueR);
-				memLog->Lines->Add(Temp);
-			}
+//			if (checkBox1 == 1 )
+//			{
+//				char Temp[32];
+//				sprintf(Temp, "#%04d_%04d #%04d_%04d", 1088, (int)vuValueL, 1089, (int)vuValueR);
+//				memLog->Lines->Add(Temp);
+//			}
 
 
 
@@ -1046,6 +1122,8 @@ void __fastcall TWillemForm1::RefreshTimerTimer(TObject *Sender)
 
 void __fastcall TWillemForm1::Button1Click(TObject *Sender)
 {
+	count = count1 = count2 = toestand = 0;
+	TimerStartDelay->Enabled = true;
 //	static int toggle;
 //
 //	if( toggle )
@@ -1282,7 +1360,7 @@ void __fastcall TWillemForm1::TrackBar1Change(TObject *Sender)
 	union mbn_data d;
 	int value = WillemForm1->TrackBar1->Position;
 	value = 1023 - value;
-	d.SInt = value;
+	d.UInt = value;
 
 	mbnUpdateSensorData(mbn, 1084, d);         // Fader module 1
 }
@@ -1294,7 +1372,7 @@ void __fastcall TWillemForm1::TrackBar2Change(TObject *Sender)
 	union mbn_data d;
 	int value = WillemForm1->TrackBar2->Position;
 	value = 0;
-	d.SInt = value;
+	d.UInt = value;
 
 	mbnUpdateSensorData(mbn, 1085, d);     // Fader module 2
 }
@@ -1310,21 +1388,175 @@ void __fastcall TWillemForm1::TrackBar2Change(TObject *Sender)
 
 void __fastcall TWillemForm1::Button2Click(TObject *Sender)
 {
-//	 std::ofstream outputFile;
-//	 outputFile.open("example.txt");
-//	 if (outputFile.is_open())
-//	 {
-//		outputFile << "Hello, World!" << std::endl;
-//		outputFile << "This is an example text." << std::endl;
-//		outputFile.close();
-//	 }
-//	 else
-//	 {
-//		// Failed to open the file
-//		std::cout << "Unable to open the file." << std::endl;
-//	 }
+	// Execute the Notepad application
+	system("notepad.exe settings.txt");
+
+	//ShellExecute(0, L"open", L"notepad.exe settings.txt", 0, 0, SW_SHOW);
+
+	//ShellExecute(0, 0, L"notepad.exe | ip.txt", 0, 0, SW_SHOW);
 }
+
+
 //---------------------------------------------------------------------------
 
 
+//int count;
+
+//void sendToTrackBar(unsigned int fdrObject, unsigned int putInt)
+//{
+//	union mbn_data d;
+//	unsigned int valueT = 1023 - putInt;
+//	d.UInt = valueT;
+//	mbnUpdateSensorData(WillemForm1->mbn, fdrObject, d);         // Fader module 1
+//	WillemForm1->memLog->Lines->Add(putInt);
+//}
+
+
+
+void __fastcall TWillemForm1::TimerStartDelayTimer(TObject *Sender)
+{
+
+	if ( toestand == 0 )
+	{
+		TrackBar1->Position = count1;
+
+		//sendToTrackBar(1084, count1);
+
+		count1 = count1 + 40;
+
+		if ( count1 > faderPosition )
+		{
+			toestand++;
+			count1=faderPosition;
+		}
+	}
+
+	else if ( toestand == 1 )
+	{
+		TrackBar1->Position = count1;
+
+		//sendToTrackBar(1084, count1);
+
+		count1 = count1 - 40;
+
+		if ( count1 < 80 )
+		{
+			toestand++;
+			count1=0;
+		}
+	}
+
+   //--------------------------------------------------------------------------------
+	else if ( toestand == 2 )
+	{
+		TrackBar3->Position = count1;
+
+		//sendToTrackBar(1339, count1);
+
+		count1 = count1 + 40;
+
+		if ( count1 > trackBar3Position )
+		{
+			toestand++;
+			count1=0;
+		}
+	}
+
+	//---------------------------
+	else if ( toestand == 3 )
+	{
+		TrackBar4->Position = count1;
+
+		//sendToTrackBar(1340, count1);
+
+		count1 = count1 + 40;
+
+		if ( count1 > trackBar3Position )
+		{
+			toestand++;
+			count1=0;
+		}
+	}
+
+   //---------------------------------------------------------------
+	else if ( toestand == 4 )
+	{
+		TrackBar5->Position = count1;
+
+		//sendToTrackBar(1341, count1);
+
+		count1 = count1 + 40;
+
+		if ( count1 > trackBar3Position )
+		{
+			toestand++;
+			count1=0;
+		}
+	}
+
+	//---------------------------
+	else if ( toestand == 5 )
+	{
+		TrackBar6->Position = count1;
+
+		//sendToTrackBar(1341, count1);
+
+		count1 = count1 + 40;
+
+		if ( count1 > trackBar3Position )
+		{
+			toestand++;
+			count1=0;
+		}
+	}
+
+
+//-----------------------------------------------------------------------------------------------------------
+	if ( toestand == 6 )
+	{
+		TrackBar2->Position = -1000;
+	}
+
+
+
+	count+=20;
+
+	if ( count > 6022)
+	{
+		TimerStartDelay->Enabled = false;
+		memLog->Lines->Add("TimerStartDelay = false");
+		//memLog->Lines->Add(count2);
+	}
+}
+
+
+//---------------------------------------------------------------------------
+
+void __fastcall TWillemForm1::Button9Click(TObject *Sender)
+{
+	//system("Call PUTTY.EXE");
+	ShellExecute(0, L"open", L"PUTTY.EXE", 0, 0, SW_SHOW);
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TWillemForm1::Button10Click(TObject *Sender)
+{
+	//system("filezilla\\filezilla.exe");
+	ShellExecute(0, L"open", L"filezilla\\filezilla.exe", 0, 0, SW_SHOW);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TWillemForm1::Button11Click(TObject *Sender)
+{
+	  //system("ADVIPSCN\\advanced_ip_scanner.exe");
+	  ShellExecute(0, L"open", L"ADVIPSCN\\advanced_ip_scanner.exe", 0, 0, SW_SHOW);
+}
+//-----------ADVIPSCN------------advanced_ip_scanner.exe----------------------------------------------------
+
+void __fastcall TWillemForm1::Button12Click(TObject *Sender)
+{
+	  system("notepad.exe info.txt");
+}
+//---------------------------------------------------------------------------
 

@@ -129,6 +129,10 @@ __published:	// IDE-managed Components
 	TLabel *Label61;
 	TButton *Button2;
 	TTimer *TimerStartDelay;
+	TButton *Button9;
+	TButton *Button10;
+	TButton *Button11;
+	TButton *Button12;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
@@ -163,6 +167,10 @@ __published:	// IDE-managed Components
 	void __fastcall TrackBar6Change(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall TimerStartDelayTimer(TObject *Sender);
+	void __fastcall Button9Click(TObject *Sender);
+	void __fastcall Button10Click(TObject *Sender);
+	void __fastcall Button11Click(TObject *Sender);
+	void __fastcall Button12Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 

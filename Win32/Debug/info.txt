@@ -1,0 +1,74 @@
+########### Voor een complete database postgres Backup :
+########### Dit uitvoeren dan komt het uiteindelijk in de  /root   terecht, dus op die plek staat het bestand dbaxumall.sql
+
+# Voor een backup:
+pg_dumpall -U postgres -f /root/dbaxumall.sql
+
+########### Dit bestand kun je ergens bewaren
+########### Bij het terug zetten wel weer in de root folder zetten, om te kunnen restoren
+
+
+########### Om de database terug te zetten moet je de processen uitzetten die de database gebruiken.
+########### Dit zijn:
+
+########### lighthttpd 
+########### axum-learner
+########### axum-engine
+########### axum-address
+########### axum-gateway
+
+ 
+########### Dus zul je ze handmatig uit moeten zetten of in de /etc/rc.conf de onderste regel in het bestand aanpassen.
+########### Zodat tijdens bij het starten van de axum die processen niet worden gestart, dit kun je doen door er een uitroepteken ervoor te zetten.
+ 
+#via commando regel:
+killall lighttpd axum-engine axum-address axum-learner axum-gateway -v
+
+ 
+ 
+########### Daemons to start at boot-up (in this order)
+###########   - prefix a daemon with a ! to disable it
+###########      - prefix a daemon with a @ to start it up in the background
+###########
+########### DAEMONS=(syslog-ng network crond @sshd !ntpdate ntpd postgresql-rm-pid postgresql axum-cleandb axum-gateway axum-address axum-learner axum-engine lighttpd xinetd)
+
+########### DAEMONS=(syslog-ng network crond @sshd !ntpdate ntpd postgresql-rm-pid postgresql axum-cleandb axum-gateway axum-address axum-learner axum-engine lighttpd xinetd)
+
+########### Voorbeeld waarbij ze zijn uitgezet :
+########### DAEMONS=(syslog-ng network crond @sshd !ntpdate ntpd !postgresql-rm-pid !postgresql !axum-cleandb !axum-gateway !axum-address !axum-learner !axum-engine !lighttpd xinetd)
+
+########### Als je dan het systeem opgestart en de processen uit staan dan kun je de database terug zetten dmv het commando :
+
+#restore:
+psql -U postgres -h 127.0.0.1 -p 5432 < /root/dbaxumall.sql
+
+########### Kijk met ps -A welke processen actief zijn, en welke uit zijn gezet !
+ps -A
+
+########### Nu is de oude database overschreven ! ( als dat gelukt is ! )
+
+########### EIGENLIJK MOET JE EERST DE OUDE DATABASE DELETE-EN, MET DROP DATABASE.
+
+########### voorbeeld:
+dropdb -U postgres axum
+
+########### controleer of het weg is met :
+psql -U postgres
+########### list
+\l
+########### quit
+\q      
+########### En je ziet dan de list zonder de axum
+
+########### Nu kun je het volledig terugzetten dmv:
+psql -U postgres -h 127.0.0.1 -p 5432 < /root/dbaxumall.sql
+
+#################################### COMPLETE IMAGE ########################################################################################
+Een Image van de Compact Flash card maken is weer een heel ander verhaal.
+Kijk hiervoor op de D&R webpagina bij een backup te maken en terug te zetten
+
+http://www.mambanet.org/wiki/dokuwiki/doku.php?id=axumcompactflash:start
+
+In een kort verhaal, je kunt de backup downloaden, en dmv dubaron diskimager terug zetten 
+( wel van te voren de partitie eraf halen met Active partition manager en met Gparted programma onder linux de compact flash card checken )
+############################################################################################################################ 

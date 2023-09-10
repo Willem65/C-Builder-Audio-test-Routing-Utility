@@ -70,53 +70,53 @@ object WillemForm1: TWillemForm1
   object Label8: TLabel
     Left = 519
     Top = 448
-    Width = 24
+    Width = 25
     Height = 36
     Caption = 'Q'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -29
     Font.Name = 'Century Gothic'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label9: TLabel
     Left = 404
     Top = 448
-    Width = 24
+    Width = 25
     Height = 36
     Caption = 'Q'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -29
     Font.Name = 'Century Gothic'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label10: TLabel
     Left = 519
     Top = 556
-    Width = 24
+    Width = 25
     Height = 36
     Caption = 'Q'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -29
     Font.Name = 'Century Gothic'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label11: TLabel
     Left = 404
     Top = 556
-    Width = 24
+    Width = 25
     Height = 36
     Caption = 'Q'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -29
     Font.Name = 'Century Gothic'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label12: TLabel
@@ -3592,8 +3592,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 643
-    Top = 104
+    Left = 641
+    Top = 102
     Width = 218
     Height = 241
     Anchors = []
@@ -3605,16 +3605,17 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 640
+    ExplicitLeft = 638
   end
   object UDPEdit: TEdit
-    Left = 652
+    Left = 650
     Top = 19
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
+    ExplicitLeft = 647
   end
   object btnOpen: TButton
     Left = 784
@@ -3625,9 +3626,10 @@ object WillemForm1: TWillemForm1
     Caption = 'Start'
     TabOrder = 2
     OnClick = btnOpenClick
+    ExplicitLeft = 780
   end
   object lstInterfaces: TComboBox
-    Left = 652
+    Left = 650
     Top = 53
     Width = 125
     Height = 21
@@ -3637,6 +3639,7 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
+    ExplicitLeft = 647
   end
   object ProgressBar1: TProgressBar
     Left = 29
@@ -3658,6 +3661,7 @@ object WillemForm1: TWillemForm1
     Caption = 'init faders'
     TabOrder = 5
     OnClick = Button1Click
+    ExplicitLeft = 650
   end
   object ProgressBar2: TProgressBar
     Left = 103
@@ -3759,10 +3763,10 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 641
-    Top = 374
+    Left = 639
+    Top = 375
     Width = 218
-    Height = 294
+    Height = 231
     Anchors = []
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -3772,8 +3776,8 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 638
-    ExplicitTop = 373
+    ExplicitLeft = 636
+    ExplicitTop = 374
   end
   object ProgressBar5: TProgressBar
     Left = 428
@@ -3865,7 +3869,7 @@ object WillemForm1: TWillemForm1
   end
   object CheckBox1: TCheckBox
     Left = 807
-    Top = 352
+    Top = 354
     Width = 87
     Height = 20
     Anchors = []
@@ -3873,7 +3877,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 27
     OnClick = CheckBox1Click
     ExplicitLeft = 803
-    ExplicitTop = 351
+    ExplicitTop = 353
   end
   object GroupBox7: TGroupBox
     Left = 155
@@ -4019,6 +4023,42 @@ object WillemForm1: TWillemForm1
     Caption = 'Settings'
     TabOrder = 41
     OnClick = Button2Click
+  end
+  object Button9: TButton
+    Left = 645
+    Top = 616
+    Width = 76
+    Height = 23
+    Caption = 'Putty'
+    TabOrder = 42
+    OnClick = Button9Click
+  end
+  object Button10: TButton
+    Left = 738
+    Top = 616
+    Width = 76
+    Height = 23
+    Caption = 'Filezilla'
+    TabOrder = 43
+    OnClick = Button10Click
+  end
+  object Button11: TButton
+    Left = 646
+    Top = 648
+    Width = 76
+    Height = 23
+    Caption = 'IPscanner'
+    TabOrder = 44
+    OnClick = Button11Click
+  end
+  object Button12: TButton
+    Left = 739
+    Top = 648
+    Width = 76
+    Height = 23
+    Caption = 'BackUp Info'
+    TabOrder = 45
+    OnClick = Button12Click
   end
   object RefreshTimer: TTimer
     Interval = 1

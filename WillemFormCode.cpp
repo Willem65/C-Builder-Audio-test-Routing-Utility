@@ -530,7 +530,8 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 
 
 
-   // ---------------------------- Oled Log Data to memLog2 -------------------------------------------
+// ---------------------------- Oled Log Data to memLog2 -------------------------------------------
+//
 //	if (obj >= 1036 && obj <= 1047)
 //	{
 //		char Temp[32];
@@ -604,6 +605,10 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 	btnOpen->Enabled = true;
 	UDPEdit->Enabled = true;
 	Button2->Enabled = true;
+	Button9->Enabled = true;
+	Button10->Enabled = true;
+	Button11->Enabled = true;
+    Button12->Enabled = true;
 
 	//----------------------------------------------------- Read from file
 	std::string fileContent;
@@ -1386,6 +1391,8 @@ void __fastcall TWillemForm1::Button2Click(TObject *Sender)
 	// Execute the Notepad application
 	system("notepad.exe settings.txt");
 
+	//ShellExecute(0, L"open", L"notepad.exe settings.txt", 0, 0, SW_SHOW);
+
 	//ShellExecute(0, 0, L"notepad.exe | ip.txt", 0, 0, SW_SHOW);
 }
 
@@ -1402,7 +1409,8 @@ void __fastcall TWillemForm1::Button2Click(TObject *Sender)
 //	d.UInt = valueT;
 //	mbnUpdateSensorData(WillemForm1->mbn, fdrObject, d);         // Fader module 1
 //	WillemForm1->memLog->Lines->Add(putInt);
-//}
+//}
+
 
 
 void __fastcall TWillemForm1::TimerStartDelayTimer(TObject *Sender)
@@ -1522,11 +1530,33 @@ void __fastcall TWillemForm1::TimerStartDelayTimer(TObject *Sender)
 }
 
 
+//---------------------------------------------------------------------------
 
+void __fastcall TWillemForm1::Button9Click(TObject *Sender)
+{
+	//system("Call PUTTY.EXE");
+	ShellExecute(0, L"open", L"PUTTY.EXE", 0, 0, SW_SHOW);
 
+}
+//---------------------------------------------------------------------------
 
+void __fastcall TWillemForm1::Button10Click(TObject *Sender)
+{
+	//system("filezilla\\filezilla.exe");
+	ShellExecute(0, L"open", L"filezilla\\filezilla.exe", 0, 0, SW_SHOW);
+}
+//---------------------------------------------------------------------------
 
+void __fastcall TWillemForm1::Button11Click(TObject *Sender)
+{
+	  //system("ADVIPSCN\\advanced_ip_scanner.exe");
+	  ShellExecute(0, L"open", L"ADVIPSCN\\advanced_ip_scanner.exe", 0, 0, SW_SHOW);
+}
+//-----------ADVIPSCN------------advanced_ip_scanner.exe----------------------------------------------------
 
-
+void __fastcall TWillemForm1::Button12Click(TObject *Sender)
+{
+	  system("notepad.exe info.txt");
+}
 //---------------------------------------------------------------------------
 
