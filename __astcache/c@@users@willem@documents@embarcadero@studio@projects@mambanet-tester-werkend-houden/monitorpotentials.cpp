@@ -1,4 +1,4 @@
-﻿
+
 #include "WillemFormCode.h"
 #include "mbn.h"
 #include "MonitorPotentials.h"
@@ -62,7 +62,8 @@ void __fastcall TWillemForm1::TrackBar6Change(TObject *Sender)
 ////	d.UInt = valueT;
 ////	mbnUpdateSensorData(WillemForm1->mbn, fdrObject, d);         // Fader module 1
 ////	WillemForm1->memLog->Lines->Add(putInt);
-////}//
+////}
+//
 //
 //
 //void __fastcall TWillemForm1::TimerStartDelayTimer(TObject *Sender)
