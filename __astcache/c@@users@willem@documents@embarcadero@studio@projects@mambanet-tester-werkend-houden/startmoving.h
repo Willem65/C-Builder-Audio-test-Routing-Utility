@@ -1,4 +1,4 @@
-#ifndef StartMovingH
+﻿#ifndef StartMovingH
 #define StartMovingH
 
 

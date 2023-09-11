@@ -1,4 +1,4 @@
-#ifndef MonitorPotentialsH
+﻿#ifndef MonitorPotentialsH
 #define MonitorPotentialsH
 
 //extern int trackBar3Position, faderPosition;

@@ -239,22 +239,20 @@ object WillemForm1: TWillemForm1
     Caption = 'VU info'
   end
   object Label27: TLabel
-    Left = 724
-    Top = 355
+    Left = 648
+    Top = 366
     Width = 36
     Height = 13
     Anchors = []
     Caption = 'Object'
-    ExplicitLeft = 753
   end
   object Label28: TLabel
-    Left = 765
-    Top = 355
+    Left = 692
+    Top = 366
     Width = 30
     Height = 13
     Anchors = []
     Caption = 'Value'
-    ExplicitLeft = 796
   end
   object Label30: TLabel
     Left = 38
@@ -3592,8 +3590,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 635
-    Top = 96
+    Left = 642
+    Top = 107
     Width = 218
     Height = 241
     Anchors = []
@@ -3605,17 +3603,16 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 632
   end
   object UDPEdit: TEdit
-    Left = 644
+    Left = 643
     Top = 19
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
-    ExplicitLeft = 641
+    ExplicitLeft = 640
   end
   object btnOpen: TButton
     Left = 784
@@ -3629,7 +3626,7 @@ object WillemForm1: TWillemForm1
     ExplicitLeft = 780
   end
   object lstInterfaces: TComboBox
-    Left = 644
+    Left = 643
     Top = 53
     Width = 125
     Height = 21
@@ -3639,7 +3636,7 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
-    ExplicitLeft = 641
+    ExplicitLeft = 640
   end
   object ProgressBar1: TProgressBar
     Left = 29
@@ -3763,8 +3760,8 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 633
-    Top = 381
+    Left = 643
+    Top = 382
     Width = 218
     Height = 231
     Anchors = []
@@ -3776,8 +3773,6 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 630
-    ExplicitTop = 380
   end
   object ProgressBar5: TProgressBar
     Left = 428
@@ -3869,7 +3864,7 @@ object WillemForm1: TWillemForm1
   end
   object CheckBox1: TCheckBox
     Left = 807
-    Top = 360
+    Top = 361
     Width = 87
     Height = 20
     Anchors = []
@@ -3877,7 +3872,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 27
     OnClick = CheckBox1Click
     ExplicitLeft = 803
-    ExplicitTop = 359
+    ExplicitTop = 360
   end
   object GroupBox7: TGroupBox
     Left = 155
