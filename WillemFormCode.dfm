@@ -82,7 +82,7 @@ object WillemForm1: TWillemForm1
   end
   object Label9: TLabel
     Left = 404
-    Top = 448
+    Top = 447
     Width = 25
     Height = 36
     Caption = 'Q'
@@ -3592,8 +3592,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 641
-    Top = 102
+    Left = 635
+    Top = 96
     Width = 218
     Height = 241
     Anchors = []
@@ -3605,17 +3605,17 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 638
+    ExplicitLeft = 632
   end
   object UDPEdit: TEdit
-    Left = 650
+    Left = 644
     Top = 19
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
-    ExplicitLeft = 647
+    ExplicitLeft = 641
   end
   object btnOpen: TButton
     Left = 784
@@ -3629,7 +3629,7 @@ object WillemForm1: TWillemForm1
     ExplicitLeft = 780
   end
   object lstInterfaces: TComboBox
-    Left = 650
+    Left = 644
     Top = 53
     Width = 125
     Height = 21
@@ -3639,7 +3639,7 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
-    ExplicitLeft = 647
+    ExplicitLeft = 641
   end
   object ProgressBar1: TProgressBar
     Left = 29
@@ -3763,8 +3763,8 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 639
-    Top = 375
+    Left = 633
+    Top = 381
     Width = 218
     Height = 231
     Anchors = []
@@ -3776,8 +3776,8 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 636
-    ExplicitTop = 374
+    ExplicitLeft = 630
+    ExplicitTop = 380
   end
   object ProgressBar5: TProgressBar
     Left = 428
@@ -3869,7 +3869,7 @@ object WillemForm1: TWillemForm1
   end
   object CheckBox1: TCheckBox
     Left = 807
-    Top = 354
+    Top = 360
     Width = 87
     Height = 20
     Anchors = []
@@ -3877,7 +3877,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 27
     OnClick = CheckBox1Click
     ExplicitLeft = 803
-    ExplicitTop = 353
+    ExplicitTop = 359
   end
   object GroupBox7: TGroupBox
     Left = 155
@@ -4072,5 +4072,12 @@ object WillemForm1: TWillemForm1
     OnTimer = TimerStartDelayTimer
     Left = 532
     Top = 60
+  end
+  object OnlineDetectTimer: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = OnlineDetectTimerTimer
+    Left = 471
+    Top = 155
   end
 end

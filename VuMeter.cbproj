@@ -124,6 +124,12 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="ButtonOpenObjects.cpp">
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <None Include="ButtonOpenObjects.h">
+            <BuildOrder>11</BuildOrder>
+        </None>
         <None Include="mbn.dll"/>
         <None Include="mbn.h">
             <BuildOrder>4</BuildOrder>
@@ -137,6 +143,24 @@
         </CppCompile>
         <None Include="MonitorPotentials.h">
             <BuildOrder>7</BuildOrder>
+        </None>
+        <CppCompile Include="SensorControls.cpp">
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <None Include="SensorControls.h">
+            <BuildOrder>15</BuildOrder>
+        </None>
+        <CppCompile Include="SetActuatorData.cpp">
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <None Include="SetActuatorData.h">
+            <BuildOrder>13</BuildOrder>
+        </None>
+        <CppCompile Include="StartMoving.cpp">
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <None Include="StartMoving.h">
+            <BuildOrder>9</BuildOrder>
         </None>
         <CppCompile Include="VuMeter.cpp">
             <BuildOrder>0</BuildOrder>

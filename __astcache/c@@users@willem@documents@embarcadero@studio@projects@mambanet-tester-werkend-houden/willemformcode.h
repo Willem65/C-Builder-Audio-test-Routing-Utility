@@ -133,6 +133,7 @@ __published:	// IDE-managed Components
 	TButton *Button10;
 	TButton *Button11;
 	TButton *Button12;
+	TTimer *OnlineDetectTimer;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
@@ -171,6 +172,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button10Click(TObject *Sender);
 	void __fastcall Button11Click(TObject *Sender);
 	void __fastcall Button12Click(TObject *Sender);
+	void __fastcall OnlineDetectTimerTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 
