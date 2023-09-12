@@ -54,7 +54,6 @@ __published:	// IDE-managed Components
 	TLabel *Label19;
 	TGroupBox *GroupBox3;
 	TGroupBox *GroupBox4;
-	TLabel *Label26;
 	TMemo *memLog2;
 	TLabel *Label27;
 	TLabel *Label28;
@@ -134,6 +133,23 @@ __published:	// IDE-managed Components
 	TButton *Button11;
 	TButton *Button12;
 	TTimer *OnlineDetectTimer;
+	TLabel *Label26;
+	TLabel *Label59;
+	TLabel *Label62;
+	TLabel *Label63;
+	TLabel *Label64;
+	TLabel *Label65;
+	TLabel *Label66;
+	TLabel *Label67;
+	TLabel *Label68;
+	TLabel *Label69;
+	TLabel *Label70;
+	TLabel *Label71;
+	TLabel *Label72;
+	TLabel *Label73;
+	TLabel *Label74;
+	TLabel *Label75;
+	TButton *Button13;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
@@ -173,6 +189,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button11Click(TObject *Sender);
 	void __fastcall Button12Click(TObject *Sender);
 	void __fastcall OnlineDetectTimerTimer(TObject *Sender);
+	void __fastcall Button13Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 

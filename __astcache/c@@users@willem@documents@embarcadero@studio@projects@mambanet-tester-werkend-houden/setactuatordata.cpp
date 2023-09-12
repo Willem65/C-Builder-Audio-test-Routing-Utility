@@ -1,4 +1,4 @@
-﻿
+
 #include "SetActuatorData.h"
 
 
@@ -452,7 +452,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		  WillemForm1->Label44->Color = clInactiveCaption;
 
 	}
-		else if (obj == 1237)    //pfl mon1 crm
+	else if (obj == 1237)    //pfl mon1 crm
 	{
 
 		int t=dat.UInt;
@@ -466,6 +466,123 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 
 
 
+  //---------------------------------------------------------------------------
+//----------------------------- GPO SIGNALES------------------------------------
+//---------------------------------------------------------------------------
+
+
+
+
+	else if (obj == 1214)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label26->Color = clRed;
+		else
+		  WillemForm1->Label26->Color = clInactiveCaption;
+	}
+
+
+//---------------------------------------------------------------------------
+
+
+
+	else if (obj == 1215)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label59->Color = clRed;
+		else
+		  WillemForm1->Label59->Color = clInactiveCaption;
+	}
+
+
+//---------------------------------------------------------------------------
+
+
+
+	else if (obj == 1216)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label62->Color = clRed;
+		else
+		  WillemForm1->Label62->Color = clInactiveCaption;
+	}
+
+
+//---------------------------------------------------------------------------
+
+
+
+	else if (obj == 1217)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label63->Color = clRed;
+		else
+		  WillemForm1->Label63->Color = clInactiveCaption;
+	}
+
+
+//---------------------------------------------------------------------------
+
+
+	else if (obj == 1218)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label64->Color = clRed;
+		else
+		  WillemForm1->Label64->Color = clInactiveCaption;
+	}
+
+
+//---------------------------------------------------------------------------
+
+
+	else if (obj == 1219)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label65->Color = clRed;
+		else
+		  WillemForm1->Label65->Color = clInactiveCaption;
+	}
+
+//---------------------------------------------------------------------------
+
+
+	else if (obj == 1220)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label66->Color = clRed;
+		else
+		  WillemForm1->Label66->Color = clInactiveCaption;
+	}
+
+//----------------1058-------1237----------------------------------------------------
+
+
+	else if (obj == 1221)
+	{
+		int t=dat.SInt;
+
+		if( t == 1 )
+		  WillemForm1->Label67->Color = clRed;
+		else
+		  WillemForm1->Label67->Color = clInactiveCaption;
+	}
+
+//---------------------------------------------------------------------------
 
 
 

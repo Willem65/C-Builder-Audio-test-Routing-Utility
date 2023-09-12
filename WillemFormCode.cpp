@@ -314,13 +314,40 @@ void __fastcall TWillemForm1::Button12Click(TObject *Sender)
 
 void __fastcall TWillemForm1::OnlineDetectTimerTimer(TObject *Sender)
 {
-   		if ( started == 0 )
+		if ( started == 0 )
 		{
 			ShowMessage("Wrong IP address, or axum server is not running");
 			OnlineDetectTimer->Enabled = false;
 		}
 		OnlineDetectTimer->Enabled = false;
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+void __fastcall TWillemForm1::Button13Click(TObject *Sender)
+{
+    	 union mbn_data d;
+	 d.SInt = 1;
+	 mbnUpdateSensorData(mbn, 1214, d);
+	 mbnUpdateSensorData(mbn, 1215, d);
+	 mbnUpdateSensorData(mbn, 1216, d);
+	 mbnUpdateSensorData(mbn, 1217, d);
+		 mbnUpdateSensorData(mbn, 1218, d);
+	 mbnUpdateSensorData(mbn, 1219, d);
+	 mbnUpdateSensorData(mbn, 1220, d);
+	 mbnUpdateSensorData(mbn, 1221, d);
+//	 d.SInt = 0;
+//	 mbnUpdateSensorData(mbn, 1049, d);
 }
 //---------------------------------------------------------------------------
 
