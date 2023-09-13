@@ -1,4 +1,4 @@
-#ifndef SensorControlsH
+﻿#ifndef SensorControlsH
 #define SensorControlsH
 
 #include "WillemFormCode.h"
