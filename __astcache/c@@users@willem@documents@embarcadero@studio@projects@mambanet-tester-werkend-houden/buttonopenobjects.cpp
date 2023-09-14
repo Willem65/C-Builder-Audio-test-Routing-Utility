@@ -89,7 +89,7 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 	thisnodeB.MambaNetAddr = 0;
 	thisnodeB.Services = 0;
 	sprintf(thisnodeB.Description, "Axite Control Surface 6 Faders + CRM");
-	sprintf(thisnodeB.Name, "Test Node D&R");
+	sprintf(thisnodeB.Name, "Test Node Utility");
 	thisnodeB.ManufacturerID = 0x0001;
 	thisnodeB.ProductID = 0x0022;
 	thisnodeB.UniqueIDPerProduct = 0x110;   //UniqueIDPerProduct

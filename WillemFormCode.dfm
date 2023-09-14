@@ -4,8 +4,8 @@ object WillemForm1: TWillemForm1
   HorzScrollBar.Color = clBtnFace
   HorzScrollBar.ParentColor = False
   Caption = 'Audio Test Utility'
-  ClientHeight = 675
-  ClientWidth = 868
+  ClientHeight = 674
+  ClientWidth = 864
   Color = clCream
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -15,11 +15,11 @@ object WillemForm1: TWillemForm1
   Position = poDesigned
   OnCreate = FormCreate
   DesignSize = (
-    868
-    675)
+    864
+    674)
   TextHeight = 13
   object Label2: TLabel
-    Left = 670
+    Left = 667
     Top = 38
     Width = 54
     Height = 13
@@ -28,7 +28,7 @@ object WillemForm1: TWillemForm1
     ExplicitLeft = 746
   end
   object Label22: TLabel
-    Left = 671
+    Left = 668
     Top = 3
     Width = 60
     Height = 13
@@ -233,22 +233,24 @@ object WillemForm1: TWillemForm1
     ParentFont = False
   end
   object Label27: TLabel
-    Left = 662
-    Top = 364
+    Left = 659
+    Top = 363
     Width = 36
     Height = 13
     Anchors = []
     Caption = 'Object'
     ExplicitLeft = 736
+    ExplicitTop = 364
   end
   object Label28: TLabel
-    Left = 704
-    Top = 364
+    Left = 701
+    Top = 363
     Width = 30
     Height = 13
     Anchors = []
     Caption = 'Value'
     ExplicitLeft = 783
+    ExplicitTop = 364
   end
   object Label30: TLabel
     Left = 38
@@ -3804,7 +3806,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 645
+    Left = 642
     Top = 103
     Width = 218
     Height = 241
@@ -3817,20 +3819,18 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 642
   end
   object UDPEdit: TEdit
-    Left = 654
+    Left = 651
     Top = 17
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
-    ExplicitLeft = 651
   end
   object btnOpen: TButton
-    Left = 791
+    Left = 787
     Top = 16
     Width = 71
     Height = 23
@@ -3838,10 +3838,9 @@ object WillemForm1: TWillemForm1
     Caption = 'Start'
     TabOrder = 2
     OnClick = btnOpenClick
-    ExplicitLeft = 787
   end
   object lstInterfaces: TComboBox
-    Left = 654
+    Left = 651
     Top = 51
     Width = 125
     Height = 21
@@ -3851,7 +3850,6 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
-    ExplicitLeft = 651
   end
   object ProgressBar1: TProgressBar
     Left = 29
@@ -3865,7 +3863,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 4
   end
   object Button1: TButton
-    Left = 665
+    Left = 662
     Top = 76
     Width = 85
     Height = 21
@@ -3873,7 +3871,6 @@ object WillemForm1: TWillemForm1
     Caption = 'init faders'
     TabOrder = 5
     OnClick = Button1Click
-    ExplicitLeft = 662
   end
   object ProgressBar2: TProgressBar
     Left = 103
@@ -3975,8 +3972,8 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 647
-    Top = 382
+    Left = 644
+    Top = 381
     Width = 218
     Height = 231
     Anchors = []
@@ -3988,8 +3985,6 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 644
-    ExplicitTop = 381
   end
   object ProgressBar5: TProgressBar
     Left = 428
@@ -4080,16 +4075,14 @@ object WillemForm1: TWillemForm1
     TabOrder = 26
   end
   object CheckBox1: TCheckBox
-    Left = 770
-    Top = 360
+    Left = 766
+    Top = 359
     Width = 87
     Height = 20
     Anchors = []
     Caption = 'Debug'
     TabOrder = 27
     OnClick = CheckBox1Click
-    ExplicitLeft = 766
-    ExplicitTop = 359
   end
   object GroupBox7: TGroupBox
     Left = 155
@@ -4273,11 +4266,11 @@ object WillemForm1: TWillemForm1
     OnClick = Button12Click
   end
   object Button13: TButton
-    Left = 792
-    Top = 47
-    Width = 71
+    Left = 469
+    Top = 63
+    Width = 142
     Height = 22
-    Caption = 'Test'
+    Caption = 'Test GPO 1-8'
     TabOrder = 46
     OnClick = Button13Click
   end
