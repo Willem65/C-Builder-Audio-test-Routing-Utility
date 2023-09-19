@@ -7,6 +7,7 @@ object WillemForm1: TWillemForm1
   ClientHeight = 674
   ClientWidth = 864
   Color = clCream
+  DoubleBuffered = True
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -19,7 +20,7 @@ object WillemForm1: TWillemForm1
     674)
   TextHeight = 13
   object Label2: TLabel
-    Left = 667
+    Left = 664
     Top = 38
     Width = 54
     Height = 13
@@ -28,7 +29,7 @@ object WillemForm1: TWillemForm1
     ExplicitLeft = 746
   end
   object Label22: TLabel
-    Left = 668
+    Left = 665
     Top = 3
     Width = 60
     Height = 13
@@ -233,7 +234,7 @@ object WillemForm1: TWillemForm1
     ParentFont = False
   end
   object Label27: TLabel
-    Left = 659
+    Left = 656
     Top = 363
     Width = 36
     Height = 13
@@ -243,7 +244,7 @@ object WillemForm1: TWillemForm1
     ExplicitTop = 364
   end
   object Label28: TLabel
-    Left = 701
+    Left = 697
     Top = 363
     Width = 30
     Height = 13
@@ -3806,7 +3807,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 642
+    Left = 638
     Top = 103
     Width = 218
     Height = 241
@@ -3819,18 +3820,20 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
+    ExplicitLeft = 635
   end
   object UDPEdit: TEdit
-    Left = 651
+    Left = 647
     Top = 17
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
+    ExplicitLeft = 644
   end
   object btnOpen: TButton
-    Left = 787
+    Left = 783
     Top = 16
     Width = 71
     Height = 23
@@ -3838,9 +3841,10 @@ object WillemForm1: TWillemForm1
     Caption = 'Start'
     TabOrder = 2
     OnClick = btnOpenClick
+    ExplicitLeft = 779
   end
   object lstInterfaces: TComboBox
-    Left = 651
+    Left = 647
     Top = 51
     Width = 125
     Height = 21
@@ -3850,6 +3854,7 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
+    ExplicitLeft = 644
   end
   object ProgressBar1: TProgressBar
     Left = 29
@@ -3863,7 +3868,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 4
   end
   object Button1: TButton
-    Left = 662
+    Left = 659
     Top = 76
     Width = 85
     Height = 21
@@ -3871,6 +3876,7 @@ object WillemForm1: TWillemForm1
     Caption = 'init faders'
     TabOrder = 5
     OnClick = Button1Click
+    ExplicitLeft = 656
   end
   object ProgressBar2: TProgressBar
     Left = 103
@@ -3972,7 +3978,7 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 644
+    Left = 640
     Top = 381
     Width = 218
     Height = 231
@@ -3985,6 +3991,8 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
+    ExplicitLeft = 637
+    ExplicitTop = 380
   end
   object ProgressBar5: TProgressBar
     Left = 428
@@ -4075,7 +4083,7 @@ object WillemForm1: TWillemForm1
     TabOrder = 26
   end
   object CheckBox1: TCheckBox
-    Left = 766
+    Left = 763
     Top = 359
     Width = 87
     Height = 20
@@ -4083,6 +4091,8 @@ object WillemForm1: TWillemForm1
     Caption = 'Debug'
     TabOrder = 27
     OnClick = CheckBox1Click
+    ExplicitLeft = 759
+    ExplicitTop = 358
   end
   object GroupBox7: TGroupBox
     Left = 155
