@@ -126,7 +126,7 @@ void __fastcall TWillemForm1::Label45Click(TObject *Sender)
 {
 	union mbn_data d;
 	d.SInt = 1;
-	mbnUpdateSensorData(mbn, 1197, d);   // Source
+	mbnUpdateSensorData(mbn, 1197, d);   // Aux1
 }
 
 //---------------------------------------------------------------------------
@@ -135,13 +135,117 @@ void __fastcall TWillemForm1::Label41Click(TObject *Sender)
 {
 	union mbn_data d;
 	d.SInt = 0;
-	mbnUpdateSensorData(mbn, 1073, d);   // Source
+	mbnUpdateSensorData(mbn, 1073, d);   // PFL
 }
 
+
+
+
+
+
+
+
+
+
+
 //---------------------------------------------------------------------------
+//---------------------- Switch 34 t/m 37 ------------------------------------
+
+//void __fastcall TWillemForm1::Label76Click(TObject *Sender)
+//{
+//	union mbn_data d;
+//	d.SInt = 0;
+//	mbnUpdateSensorData(mbn, 1225, d);   // Switch 34
+//}
+//
+//void __fastcall TWillemForm1::Label77Click(TObject *Sender)
+//{
+//	union mbn_data d;
+//	d.SInt = 0;
+//	mbnUpdateSensorData(mbn, 1226, d);   // Switch 35
+//}
+//
+//void __fastcall TWillemForm1::Label78Click(TObject *Sender)
+//{
+//	union mbn_data d;
+//	d.SInt = 0;
+//	mbnUpdateSensorData(mbn, 1227, d);   // Switch 36
+//}
+//
+//void __fastcall TWillemForm1::Label79Click(TObject *Sender)
+//{
+//	union mbn_data d;
+//	d.SInt = 0;
+//	mbnUpdateSensorData(mbn, 1228, d);   // Switch 37
+//}
+
+void __fastcall TWillemForm1::Label76MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 1;
+	mbnUpdateSensorData(mbn, 1225, d);   // Switch 34
+}
+void __fastcall TWillemForm1::Label76MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 0;
+	mbnUpdateSensorData(mbn, 1225, d);   // Switch 34
+}
 
 
 
+void __fastcall TWillemForm1::Label77MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 1;
+	mbnUpdateSensorData(mbn, 1226, d);   // Switch 34
+}
+void __fastcall TWillemForm1::Label77MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 0;
+	mbnUpdateSensorData(mbn, 1226, d);   // Switch 34
+}
+
+
+
+
+void __fastcall TWillemForm1::Label78MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 1;
+	mbnUpdateSensorData(mbn, 1227, d);   // Switch 34
+}
+void __fastcall TWillemForm1::Label78MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 0;
+	mbnUpdateSensorData(mbn, 1227, d);   // Switch 34
+}
+
+
+
+void __fastcall TWillemForm1::Label79MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 1;
+	mbnUpdateSensorData(mbn, 1228, d);   // Switch 34
+}
+void __fastcall TWillemForm1::Label79MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+	union mbn_data d;
+	d.SInt = 0;
+	mbnUpdateSensorData(mbn, 1228, d);   // Switch 34
+}
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 void __fastcall TWillemForm1::Button7Click(TObject *Sender)
 {

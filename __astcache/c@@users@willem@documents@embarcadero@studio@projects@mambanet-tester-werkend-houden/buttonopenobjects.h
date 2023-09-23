@@ -1,4 +1,4 @@
-﻿#ifndef ButtonOpenObjectsH
+#ifndef ButtonOpenObjectsH
 #define ButtonOpenObjectsH
 
 #define MBN_VARARG

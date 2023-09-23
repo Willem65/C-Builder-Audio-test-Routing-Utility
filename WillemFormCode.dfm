@@ -268,8 +268,8 @@ object WillemForm1: TWillemForm1
     Caption = 'Line 2 always to min'
   end
   object Label32: TLabel
-    Left = 446
-    Top = 136
+    Left = 470
+    Top = 135
     Width = 144
     Height = 13
     Caption = 'VU for example on one of'
@@ -303,8 +303,8 @@ object WillemForm1: TWillemForm1
     Caption = 'VU Mon2Bus'
   end
   object Label36: TLabel
-    Left = 460
-    Top = 148
+    Left = 484
+    Top = 147
     Width = 84
     Height = 13
     Caption = ' the MixBusses'
@@ -3482,15 +3482,15 @@ object WillemForm1: TWillemForm1
     Caption = '1041'
   end
   object Label50: TLabel
-    Left = 428
-    Top = 151
+    Left = 452
+    Top = 150
     Width = 24
     Height = 13
     Caption = '1042'
   end
   object Label51: TLabel
-    Left = 428
-    Top = 161
+    Left = 452
+    Top = 160
     Width = 24
     Height = 13
     Caption = '1043'
@@ -3524,7 +3524,7 @@ object WillemForm1: TWillemForm1
     Caption = '1047'
   end
   object Label56: TLabel
-    Left = 434
+    Left = 458
     Top = 174
     Width = 150
     Height = 20
@@ -3565,7 +3565,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     AutoSize = False
     Caption = 'GPO1'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3585,7 +3585,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     AutoSize = False
     Caption = 'GPO2'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3605,7 +3605,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     AutoSize = False
     Caption = 'GPO3'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3625,7 +3625,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     AutoSize = False
     Caption = 'GPO4'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3645,7 +3645,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     AutoSize = False
     Caption = 'GPO5'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3665,7 +3665,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     AutoSize = False
     Caption = 'GPO6'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3685,7 +3685,7 @@ object WillemForm1: TWillemForm1
     Height = 24
     AutoSize = False
     Caption = 'GPO7'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3707,7 +3707,7 @@ object WillemForm1: TWillemForm1
     Alignment = taCenter
     AutoSize = False
     Caption = 'GPO8'
-    Color = clInactiveCaption
+    Color = clMoneyGreen
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -3776,6 +3776,214 @@ object WillemForm1: TWillemForm1
     Height = 13
     Caption = '1221'
   end
+  object Label76: TLabel
+    Left = 496
+    Top = 54
+    Width = 54
+    Height = 21
+    Cursor = crHandPoint
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Switch34'
+    Color = clInactiveCaption
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Consolas'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Transparent = False
+    Layout = tlCenter
+    OnMouseDown = Label76MouseDown
+    OnMouseUp = Label76MouseUp
+  end
+  object Label77: TLabel
+    Left = 496
+    Top = 90
+    Width = 54
+    Height = 21
+    Cursor = crHandPoint
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Button35'
+    Color = clInactiveCaption
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Consolas'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Transparent = False
+    Layout = tlCenter
+    OnMouseDown = Label77MouseDown
+    OnMouseUp = Label77MouseUp
+  end
+  object Label79: TLabel
+    Left = 561
+    Top = 92
+    Width = 54
+    Height = 21
+    Cursor = crHandPoint
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Button37'
+    Color = clInactiveCaption
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Consolas'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Transparent = False
+    Layout = tlCenter
+    OnMouseDown = Label79MouseDown
+    OnMouseUp = Label79MouseUp
+  end
+  object Label78: TLabel
+    Left = 560
+    Top = 55
+    Width = 54
+    Height = 21
+    Cursor = crHandPoint
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Button36'
+    Color = clInactiveCaption
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Consolas'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Transparent = False
+    Layout = tlCenter
+    OnMouseDown = Label78MouseDown
+    OnMouseUp = Label78MouseUp
+  end
+  object Label80: TLabel
+    Left = 331
+    Top = 53
+    Width = 156
+    Height = 13
+    Caption = 'Free Configureble switches'
+  end
+  object Label81: TLabel
+    Left = 579
+    Top = 114
+    Width = 24
+    Height = 13
+    Caption = '1228'
+  end
+  object Label82: TLabel
+    Left = 578
+    Top = 77
+    Width = 24
+    Height = 13
+    Caption = '1227'
+  end
+  object Label83: TLabel
+    Left = 513
+    Top = 112
+    Width = 24
+    Height = 13
+    Caption = '1226'
+  end
+  object Label84: TLabel
+    Left = 514
+    Top = 76
+    Width = 24
+    Height = 13
+    Caption = '1225'
+  end
+  object Label85: TLabel
+    Left = 392
+    Top = 76
+    Width = 24
+    Height = 13
+    Caption = '1195'
+  end
+  object Label86: TLabel
+    Left = 418
+    Top = 100
+    Width = 24
+    Height = 13
+    Caption = '1192'
+  end
+  object Label87: TLabel
+    Left = 418
+    Top = 125
+    Width = 24
+    Height = 13
+    Caption = '1193'
+  end
+  object Label88: TLabel
+    Left = 418
+    Top = 175
+    Width = 24
+    Height = 13
+    Caption = '1197'
+  end
+  object Label89: TLabel
+    Left = 418
+    Top = 150
+    Width = 24
+    Height = 13
+    Caption = '1194'
+  end
+  object Label90: TLabel
+    Left = 349
+    Top = 313
+    Width = 24
+    Height = 13
+    Caption = '1230'
+  end
+  object Label91: TLabel
+    Left = 349
+    Top = 335
+    Width = 24
+    Height = 13
+    Caption = '1232'
+  end
+  object Label92: TLabel
+    Left = 349
+    Top = 356
+    Width = 24
+    Height = 13
+    Caption = '1234'
+  end
+  object Label93: TLabel
+    Left = 349
+    Top = 378
+    Width = 24
+    Height = 13
+    Caption = '1236'
+  end
+  object Label94: TLabel
+    Left = 9
+    Top = 418
+    Width = 24
+    Height = 13
+    Caption = '1072'
+  end
+  object Label95: TLabel
+    Left = 169
+    Top = 420
+    Width = 24
+    Height = 13
+    Caption = '1073'
+  end
   object GroupBox3: TGroupBox
     Left = 209
     Top = 437
@@ -3807,8 +4015,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 638
-    Top = 103
+    Left = 637
+    Top = 102
     Width = 218
     Height = 241
     Anchors = []
@@ -3820,17 +4028,17 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 635
+    ExplicitLeft = 634
   end
   object UDPEdit: TEdit
-    Left = 647
+    Left = 646
     Top = 17
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
-    ExplicitLeft = 644
+    ExplicitLeft = 643
   end
   object btnOpen: TButton
     Left = 783
@@ -3844,7 +4052,7 @@ object WillemForm1: TWillemForm1
     ExplicitLeft = 779
   end
   object lstInterfaces: TComboBox
-    Left = 647
+    Left = 646
     Top = 51
     Width = 125
     Height = 21
@@ -3854,7 +4062,7 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
-    ExplicitLeft = 644
+    ExplicitLeft = 643
   end
   object ProgressBar1: TProgressBar
     Left = 29
@@ -3978,8 +4186,8 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 640
-    Top = 381
+    Left = 639
+    Top = 382
     Width = 218
     Height = 231
     Anchors = []
@@ -3991,12 +4199,12 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 637
-    ExplicitTop = 380
+    ExplicitLeft = 636
+    ExplicitTop = 381
   end
   object ProgressBar5: TProgressBar
-    Left = 428
-    Top = 128
+    Left = 452
+    Top = 127
     Width = 7
     Height = 24
     Max = 550
@@ -4006,8 +4214,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 19
   end
   object ProgressBar6: TProgressBar
-    Left = 436
-    Top = 128
+    Left = 460
+    Top = 127
     Width = 7
     Height = 24
     Max = 550
@@ -4083,16 +4291,16 @@ object WillemForm1: TWillemForm1
     TabOrder = 26
   end
   object CheckBox1: TCheckBox
-    Left = 763
-    Top = 359
+    Left = 764
+    Top = 360
     Width = 87
     Height = 20
     Anchors = []
     Caption = 'Debug'
     TabOrder = 27
     OnClick = CheckBox1Click
-    ExplicitLeft = 759
-    ExplicitTop = 358
+    ExplicitLeft = 760
+    ExplicitTop = 359
   end
   object GroupBox7: TGroupBox
     Left = 155
@@ -4276,9 +4484,9 @@ object WillemForm1: TWillemForm1
     OnClick = Button12Click
   end
   object Button13: TButton
-    Left = 469
-    Top = 63
-    Width = 142
+    Left = 779
+    Top = 47
+    Width = 77
     Height = 22
     Caption = 'Test GPO 1-8'
     TabOrder = 46

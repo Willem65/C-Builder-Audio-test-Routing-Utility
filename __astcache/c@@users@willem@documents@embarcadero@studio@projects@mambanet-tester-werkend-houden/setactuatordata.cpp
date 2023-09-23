@@ -1,10 +1,50 @@
 ﻿
+#define  OBJVALBUF 16
+
 #include "SetActuatorData.h"
+
+//unsigned int SwitchState[380];
+//unsigned int OnColor[380];
+//unsigned int OffColor[380];
+
+int SwitchStateNow;
+int OnColorNow34=2;
+int OffColorNow34;
+int OnColorNow35=2;
+int OffColorNow35;
+int OnColorNow36=2;
+int OffColorNow36;
+int OnColorNow37=2;
+int OffColorNow37;
+
+
+
+
+//char dumpnew[2180];
+//char dump[2180];
+
+int testcolor, testobj;
+
+//concatenateStr(int upddump)
+//{
+//	strcat(dump,upddump);
+//	strcpy(dumpnew,dump);
+//
+//	// int buffer[10];
+//	// sprintf(buffer, "#%04d_%04d", 1084, 1023);
+//	// strcpy(dumpnew,buffer);
+//}
 
 
 int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data dat)
 {
+
+	int sw;
+
+//	WillemForm1->memLog2->Lines->Add(testobj);
+//	WillemForm1->memLog2->Lines->Add(testcolor);
 	if ( obj > 1047 )                // Logger
+//	if (  (obj >= 1241) && (obj <=1289) )
 	{
 		if (checkBox1 == 1 )
 		{
@@ -480,7 +520,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label26->Color = clRed;
 		else
-		  WillemForm1->Label26->Color = clInactiveCaption;
+		  WillemForm1->Label26->Color = clMoneyGreen;
 	}
 
 
@@ -495,7 +535,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label59->Color = clRed;
 		else
-		  WillemForm1->Label59->Color = clInactiveCaption;
+		  WillemForm1->Label59->Color = clMoneyGreen;
 	}
 
 
@@ -510,7 +550,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label62->Color = clRed;
 		else
-		  WillemForm1->Label62->Color = clInactiveCaption;
+		  WillemForm1->Label62->Color = clMoneyGreen;
 	}
 
 
@@ -525,7 +565,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label63->Color = clRed;
 		else
-		  WillemForm1->Label63->Color = clInactiveCaption;
+		  WillemForm1->Label63->Color = clMoneyGreen;
 	}
 
 
@@ -539,7 +579,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label64->Color = clRed;
 		else
-		  WillemForm1->Label64->Color = clInactiveCaption;
+		  WillemForm1->Label64->Color = clMoneyGreen;
 	}
 
 
@@ -553,7 +593,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label65->Color = clRed;
 		else
-		  WillemForm1->Label65->Color = clInactiveCaption;
+		  WillemForm1->Label65->Color = clMoneyGreen;
 	}
 
 //---------------------------------------------------------------------------
@@ -566,7 +606,7 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label66->Color = clRed;
 		else
-		  WillemForm1->Label66->Color = clInactiveCaption;
+		  WillemForm1->Label66->Color = clMoneyGreen;
 	}
 
 //----------------1058-------1237----------------------------------------------------
@@ -579,9 +619,204 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 		if( t == 1 )
 		  WillemForm1->Label67->Color = clRed;
 		else
-		  WillemForm1->Label67->Color = clInactiveCaption;
+		  WillemForm1->Label67->Color = clMoneyGreen;
 	}
 
+//---------------------------------------------------------------------------
+
+	//-------------------------------------------------------------------------------------------------------------
+	// ------------------------------------- knopjes --------------------------------------------------------------
+	//-------------------------------------------------------------------------------------------------------------
+
+	else if ( obj == 1274 )
+	{
+		OnColorNow34 = dat.UInt;
+	}
+	else if ( obj == 1275 )
+	{
+		OnColorNow35 = dat.UInt;
+	}
+	else if ( obj == 1276 )
+	{
+		OnColorNow36 = dat.UInt;
+	}
+	else if ( obj == 1277 )
+	{
+		OnColorNow37 = dat.UInt;
+	}
+
+
+	else if ( obj == 1323 )
+	{
+		OffColorNow34 = dat.UInt;
+	}
+	else if ( obj == 1324 )
+	{
+		OffColorNow35 = dat.UInt;
+	}
+	else if ( obj == 1325 )
+	{
+		OffColorNow36 = dat.UInt;
+	}
+	else if ( obj == 1326 )
+	{
+		OffColorNow37 = dat.UInt;
+	}
+
+
+//	//else if ( ((obj >= 1114) && (obj <=1137)) || ((obj >= 1290) && (obj <=1338)) )
+//	else if ( obj == 1323 )
+//		// <-----------------------OFF COLOR-----------
+//	{
+//		OffColorNow34 = dat.UInt;
+//	}
+//
+//	//else if ( ((obj >= 1090) && (obj <=1113)) || ((obj >= 1241) && (obj <=1289)) )
+//	else if ( obj == 1274 )
+//		// <-------------------------ON COLOR---------------------
+//	{
+//		OnColorNow34 = dat.UInt;
+//	}
+
+	//else if ( ((obj >= 1060) && (obj <=1083)) || ((obj >= 1192) && (obj <=1240)) )
+//	else if (obj == 1225)
+//	{
+//		// <---------------------------------SWITCH STATE-------------------------------
+//
+//		SwitchStateNow = dat.State;
+//
+//
+//		if( SwitchStateNow == 1 )
+//			testcolor=OnColorNow34;   // wat was de kleur ook al weer
+//		else
+//			testcolor=OffColorNow34;
+//
+//	}
+
+	//-----------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
+//---------------------- Switch 34 t/m 37 ------------------------------------
+
+	else if (obj == 1225)
+	{
+		SwitchStateNow = dat.State;
+
+		if( SwitchStateNow == 1 )
+		{
+			if ( OnColorNow34 == 0)
+				WillemForm1->Label76->Color = clInactiveCaption;
+			else if ( OnColorNow34 == 1)
+				WillemForm1->Label76->Color = clLime;
+			else if ( OnColorNow34 == 2)
+				WillemForm1->Label76->Color = clRed;
+			else if ( OnColorNow34 == 3)
+				WillemForm1->Label76->Color = clYellow;
+		}
+		else if( SwitchStateNow == 0 )
+		{
+			if ( OffColorNow34 == 0)
+				WillemForm1->Label76->Color = clInactiveCaption;
+			else if ( OffColorNow34 == 1)
+				WillemForm1->Label76->Color = clLime;
+			else if ( OffColorNow34 == 2)
+				WillemForm1->Label76->Color = clRed;
+			else if ( OffColorNow34 == 3)
+				WillemForm1->Label76->Color = clYellow;
+		}
+	}
+
+
+	else if (obj == 1226)
+	{
+		SwitchStateNow = dat.State;
+
+		if( SwitchStateNow == 1 )
+		{
+			if ( OnColorNow35 == 0)
+				WillemForm1->Label77->Color = clInactiveCaption;
+			else if ( OnColorNow35 == 1)
+				WillemForm1->Label77->Color = clLime;
+			else if ( OnColorNow35 == 2)
+				WillemForm1->Label77->Color = clRed;
+			else if ( OnColorNow35 == 3)
+				WillemForm1->Label77->Color = clYellow;
+		}
+		else if( SwitchStateNow == 0 )
+		{
+			if ( OffColorNow35 == 0)
+				WillemForm1->Label77->Color = clInactiveCaption;
+			else if ( OffColorNow35 == 1)
+				WillemForm1->Label77->Color = clLime;
+			else if ( OffColorNow35 == 2)
+				WillemForm1->Label77->Color = clRed;
+			else if ( OffColorNow35 == 3)
+				WillemForm1->Label77->Color = clYellow;
+		}
+	}
+
+	else if (obj == 1227)
+	{
+		SwitchStateNow = dat.State;
+
+		if( SwitchStateNow == 1 )
+		{
+			if ( OnColorNow36 == 0)
+				WillemForm1->Label78->Color = clInactiveCaption;
+			else if ( OnColorNow36 == 1)
+				WillemForm1->Label78->Color = clLime;
+			else if ( OnColorNow36 == 2)
+				WillemForm1->Label78->Color = clRed;
+			else if ( OnColorNow36 == 3)
+				WillemForm1->Label78->Color = clYellow;
+		}
+		else if( SwitchStateNow == 0 )
+		{
+			if ( OffColorNow36 == 0)
+				WillemForm1->Label78->Color = clInactiveCaption;
+			else if ( OffColorNow36 == 1)
+				WillemForm1->Label78->Color = clLime;
+			else if ( OffColorNow36 == 2)
+				WillemForm1->Label78->Color = clRed;
+			else if ( OffColorNow36 == 3)
+				WillemForm1->Label78->Color = clYellow;
+		}
+	}
+
+
+
+	else if (obj == 1228)
+	{
+		SwitchStateNow = dat.State;
+
+		if( SwitchStateNow == 1 )
+		{
+			if ( OnColorNow37 == 0)
+				WillemForm1->Label79->Color = clInactiveCaption;
+			else if ( OnColorNow37 == 1)
+				WillemForm1->Label79->Color = clLime;
+			else if ( OnColorNow37 == 2)
+				WillemForm1->Label79->Color = clRed;
+			else if ( OnColorNow37 == 3)
+				WillemForm1->Label79->Color = clYellow;
+		}
+		else if( SwitchStateNow == 0 )
+		{
+			if ( OffColorNow37 == 0)
+				WillemForm1->Label79->Color = clInactiveCaption;
+			else if ( OffColorNow37 == 1)
+				WillemForm1->Label79->Color = clLime;
+			else if ( OffColorNow37 == 2)
+				WillemForm1->Label79->Color = clRed;
+			else if ( OffColorNow37 == 3)
+				WillemForm1->Label79->Color = clYellow;
+		}
+	}
+
+//---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 
 

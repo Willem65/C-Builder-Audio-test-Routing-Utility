@@ -1,51 +1,51 @@
 ﻿[Button1]
-Coordinates=256,308,53,51
+Coordinates=256,308,59,58
 
 [Label22]
-Coordinates=586,247,52,51
+Coordinates=586,247,60,58
 
 [ProgressBar2]
-Coordinates=265,125,81,51
+Coordinates=265,125,93,58
 
 [btnOpen]
-Coordinates=452,247,56,51
+Coordinates=452,247,64,58
 
 [ProgressBar1]
-Coordinates=237,247,81,51
+Coordinates=237,247,93,58
 
 [UDPEdit]
-Coordinates=129,308,55,51
+Coordinates=129,308,64,58
 
 [ProgressBar3]
-Coordinates=387,308,81,51
+Coordinates=387,308,93,58
 
 [Label2]
-Coordinates=10,369,46,51
+Coordinates=10,369,53,58
 
 [TrackBar2]
-Coordinates=389,369,64,33
+Coordinates=389,369,74,36
 
 [memLog]
-Coordinates=546,308,57,51
+Coordinates=546,308,64,58
 
 [ProgressBar4]
-Coordinates=78,247,81,51
+Coordinates=78,247,93,58
 
 [lstInterfaces]
-Coordinates=10,10,84,105
+Coordinates=10,10,101,124
 
 [RefreshTimer]
-Coordinates=306,245,80,33
+Coordinates=306,245,92,36
 
 [Button24]
 Coordinates=184,369,58,51
 
 [TrackBar3]
-Coordinates=315,369,64,33
+Coordinates=315,369,74,36
 Visible=True
 
 [Label17]
-Coordinates=328,247,52,51
+Coordinates=328,247,60,58
 
 [Button18]
 Coordinates=542,125,58,51
@@ -54,107 +54,432 @@ Coordinates=542,125,58,51
 Coordinates=484,10,58,51
 
 [Button9]
-Coordinates=10,125,53,51
+Coordinates=10,125,59,58
 
 [Button5]
-Coordinates=582,186,53,51
+Coordinates=582,186,59,58
 
 [Button6]
-Coordinates=421,10,53,51
+Coordinates=421,10,59,58
 
 [Label18]
-Coordinates=122,186,52,51
+Coordinates=122,186,60,58
 
 [Label14]
-Coordinates=424,125,52,51
+Coordinates=424,125,60,58
 
 [Button19]
 Coordinates=169,247,58,51
 
 [GroupBox4]
-Coordinates=613,308,70,51
+Coordinates=613,308,79,58
 
 [Label13]
-Coordinates=141,125,52,51
+Coordinates=141,125,60,58
 
 [Label10]
-Coordinates=66,369,52,51
+Coordinates=66,369,60,58
 
 [Button8]
-Coordinates=247,186,53,51
+Coordinates=247,186,59,58
 
 [Button17]
 Coordinates=648,247,58,51
 
 [Label16]
-Coordinates=390,247,52,51
+Coordinates=390,247,60,58
 
 [Label12]
-Coordinates=203,125,52,51
+Coordinates=203,125,60,58
 
 [Label6]
-Coordinates=366,186,46,51
+Coordinates=366,186,53,58
 
 [Label15]
-Coordinates=172,10,52,51
+Coordinates=172,10,60,58
 
 [Label5]
-Coordinates=66,186,46,51
+Coordinates=66,186,53,58
 
 [Label7]
-Coordinates=10,186,46,51
+Coordinates=10,186,53,58
 
 [Label8]
-Coordinates=302,10,46,51
+Coordinates=302,10,53,58
 
 [Button7]
-Coordinates=358,10,53,51
+Coordinates=358,10,59,58
 
 [Button2]
-Coordinates=252,369,53,51
+Coordinates=252,369,59,58
 
 [Button23]
 Coordinates=10,247,58,51
 
 [Button4]
-Coordinates=66,308,53,51
+Coordinates=66,308,59,58
 
 [Button22]
 Coordinates=552,10,58,51
 
 [Button3]
-Coordinates=184,186,53,51
+Coordinates=184,186,59,58
 
 [Button20]
 Coordinates=518,247,58,51
 
 [Button10]
-Coordinates=234,10,58,51
+Coordinates=234,10,66,58
 
 [Button11]
-Coordinates=478,308,58,51
+Coordinates=478,308,66,58
 
 [Label19]
-Coordinates=194,308,52,51
+Coordinates=194,308,60,58
 
 [Button12]
-Coordinates=356,125,58,51
+Coordinates=356,125,66,58
 
 [GroupBox3]
-Coordinates=620,10,70,51
+Coordinates=620,10,79,58
 
 [Label9]
-Coordinates=310,186,46,51
+Coordinates=310,186,53,58
 
 [Label11]
-Coordinates=645,186,52,51
+Coordinates=645,186,60,58
 
 [Label4]
-Coordinates=486,125,46,51
+Coordinates=486,125,53,58
 
 [GroupBox2]
-Coordinates=502,186,70,51
+Coordinates=502,186,79,58
 
 []
-Coordinates=422,186,70,51
+Coordinates=246,596,91,36
+
+[Label20]
+Coordinates=177,78,60,58
+
+[Image1]
+Coordinates=257,788,57,58
+
+[Label61]
+Coordinates=426,279,60,58
+
+[Label52]
+Coordinates=317,404,60,58
+
+[Label38]
+Coordinates=0,442,60,58
+
+[Label56]
+Coordinates=743,463,60,58
+
+[Label66]
+Coordinates=559,462,60,58
+
+[Label25]
+Coordinates=425,692,60,58
+
+[TrackBar5]
+Coordinates=460,87,74,36
+
+[Label50]
+Coordinates=799,788,60,58
+
+[Label33]
+Coordinates=275,1,60,58
+
+[Label63]
+Coordinates=228,692,60,58
+
+[SourceLabel]
+Coordinates=730,78,87,58
+
+[Label3]
+Coordinates=559,324,53,58
+
+[ProgressBar6]
+Coordinates=849,692,93,58
+
+[ProgressBar7]
+Coordinates=537,78,93,58
+
+[Button13]
+Coordinates=455,356,66,58
+
+[TrackBar4]
+Coordinates=503,596,74,36
+
+[Label30]
+Coordinates=421,500,60,58
+
+[TrackBar1]
+Coordinates=424,596,74,36
+
+[Label36]
+Coordinates=868,463,60,58
+
+[GroupBox10]
+Coordinates=730,540,86,58
+
+[Label40]
+Coordinates=582,596,60,58
+
+[Label47]
+Coordinates=868,769,60,58
+
+[GroupBox1]
+Coordinates=999,78,79,58
+
+[ProgressBar10]
+Coordinates=730,1,100,58
+
+[OnlineDetectTimer]
+Coordinates=999,232,122,36
+
+[Label37]
+Coordinates=60,77,60,58
+
+[Label43]
+Coordinates=426,202,60,58
+
+[Label26]
+Coordinates=39,173,60,58
+
+[GroupBox11]
+Coordinates=868,1,86,58
+
+[Label27]
+Coordinates=868,386,60,58
+
+[TimerStartDelay]
+Coordinates=634,500,108,36
+
+[ProgressBar15]
+Coordinates=999,1,100,58
+
+[ProgressBar9]
+Coordinates=406,1,93,58
+
+[Label23]
+Coordinates=248,404,60,58
+
+[Label72]
+Coordinates=730,788,60,58
+
+[GroupBox5]
+Coordinates=999,155,79,58
+
+[Label28]
+Coordinates=868,540,60,58
+
+[Label32]
+Coordinates=868,617,60,58
+
+[Label75]
+Coordinates=385,788,60,58
+
+[Label68]
+Coordinates=661,788,60,58
+
+[LCD1line1]
+Coordinates=342,500,75,58
+
+[Label42]
+Coordinates=79,1,60,58
+
+[Label69]
+Coordinates=490,500,60,58
+
+[Label46]
+Coordinates=386,404,60,58
+
+[Label62]
+Coordinates=135,500,60,58
+
+[Label24]
+Coordinates=0,346,60,58
+
+[Label58]
+Coordinates=711,692,60,58
+
+[LCD1line2]
+Coordinates=563,692,75,58
+
+[memLog2]
+Coordinates=149,692,71,58
+
+[Label34]
+Coordinates=494,692,60,58
+
+[ProgressBar5]
+Coordinates=868,78,93,58
+
+[Label31]
+Coordinates=177,1,60,58
+
+[GroupBox7]
+Coordinates=105,282,79,58
+
+[ProgressBar16]
+Coordinates=537,385,100,58
+
+[LCD2line1]
+Coordinates=169,404,75,58
+
+[Label53]
+Coordinates=66,500,60,58
+
+[Label54]
+Coordinates=454,788,60,58
+
+[Label45]
+Coordinates=316,788,60,58
+
+[Label59]
+Coordinates=265,282,60,58
+
+[Label29]
+Coordinates=868,155,60,58
+
+[TrackBar6]
+Coordinates=345,596,74,36
+
+[CheckBox1]
+Coordinates=537,1,114,58
+
+[Label70]
+Coordinates=730,617,60,58
+
+[Label71]
+Coordinates=80,692,60,58
+
+[Label41]
+Coordinates=273,500,60,58
+
+[Label44]
+Coordinates=108,173,60,58
+
+[GroupBox6]
+Coordinates=730,155,79,58
+
+[Label73]
+Coordinates=743,386,60,58
+
+[Label57]
+Coordinates=642,692,60,58
+
+[Label49]
+Coordinates=11,692,60,58
+
+[Label1]
+Coordinates=46,282,53,58
+
+[Label35]
+Coordinates=356,692,60,58
+
+[Label48]
+Coordinates=177,155,60,58
+
+[GroupBox9]
+Coordinates=338,155,79,58
+
+[Label74]
+Coordinates=188,788,60,58
+
+[Label67]
+Coordinates=743,309,60,58
+
+[Label60]
+Coordinates=204,500,60,58
+
+[Label21]
+Coordinates=743,232,60,58
+
+[Label51]
+Coordinates=592,788,60,58
+
+[Label39]
+Coordinates=523,788,60,58
+
+[Label55]
+Coordinates=868,232,60,58
+
+[ProgressBar8]
+Coordinates=275,78,93,58
+
+[Image2]
+Coordinates=297,692,57,58
+
+[LCD2line2]
+Coordinates=651,596,75,58
+
+[Label64]
+Coordinates=0,0,60,58
+
+[Label65]
+Coordinates=868,309,60,58
+
+[Label95]
+Coordinates=654,884,60,58
+
+[Label78]
+Coordinates=119,788,60,58
+
+[Label92]
+Coordinates=999,672,60,58
+
+[Label84]
+Coordinates=792,884,60,58
+
+[Label83]
+Coordinates=516,884,60,58
+
+[Label94]
+Coordinates=999,826,60,58
+
+[Label80]
+Coordinates=999,518,60,58
+
+[Label88]
+Coordinates=999,364,60,58
+
+[Label79]
+Coordinates=309,884,60,58
+
+[Label77]
+Coordinates=999,441,60,58
+
+[Label90]
+Coordinates=378,884,60,58
+
+[Label82]
+Coordinates=447,884,60,58
+
+[Label76]
+Coordinates=999,595,60,58
+Visible=True
+
+[Label86]
+Coordinates=930,884,60,58
+
+[Label89]
+Coordinates=999,287,60,58
+
+[Label91]
+Coordinates=723,884,60,58
+
+[Label85]
+Coordinates=50,788,60,58
+
+[Label87]
+Coordinates=861,884,60,58
+
+[Label81]
+Coordinates=999,749,60,58
+
+[Label93]
+Coordinates=585,884,60,58
 

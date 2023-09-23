@@ -64,6 +64,8 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 	char err[MBN_ERRSIZE], ifdesc[512];
 	struct mbn_if_ethernet *n;
 
+
+
 	if((iflist = mbnEthernetIFList(err)) == 0)
 	{
         //addlog(LF_APP, "Error getting interface list: %s", err);
@@ -350,4 +352,5 @@ void __fastcall TWillemForm1::Button13Click(TObject *Sender)
 //	 mbnUpdateSensorData(mbn, 1049, d);
 }
 //---------------------------------------------------------------------------
+
 

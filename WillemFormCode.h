@@ -150,6 +150,26 @@ __published:	// IDE-managed Components
 	TLabel *Label74;
 	TLabel *Label75;
 	TButton *Button13;
+	TLabel *Label76;
+	TLabel *Label77;
+	TLabel *Label79;
+	TLabel *Label78;
+	TLabel *Label80;
+	TLabel *Label81;
+	TLabel *Label82;
+	TLabel *Label83;
+	TLabel *Label84;
+	TLabel *Label85;
+	TLabel *Label86;
+	TLabel *Label87;
+	TLabel *Label88;
+	TLabel *Label89;
+	TLabel *Label90;
+	TLabel *Label91;
+	TLabel *Label92;
+	TLabel *Label93;
+	TLabel *Label94;
+	TLabel *Label95;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall btnOpenClick(TObject *Sender);
 	void __fastcall RefreshTimerTimer(TObject *Sender);
@@ -190,6 +210,26 @@ __published:	// IDE-managed Components
 	void __fastcall Button12Click(TObject *Sender);
 	void __fastcall OnlineDetectTimerTimer(TObject *Sender);
 	void __fastcall Button13Click(TObject *Sender);
+	//void __fastcall Label76Click(TObject *Sender);
+
+	void __fastcall Label76MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+	void __fastcall Label76MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+
+	//void __fastcall Label77Click(TObject *Sender);
+
+	void __fastcall Label77MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+	void __fastcall Label77MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+
+	//void __fastcall Label78Click(TObject *Sender);
+
+	void __fastcall Label78MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+	void __fastcall Label78MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+
+	//void __fastcall Label79Click(TObject *Sender);
+
+	void __fastcall Label79MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+	void __fastcall Label79MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
+
 private:	// User declarations
 public:		// User declarations
 
