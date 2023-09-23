@@ -161,9 +161,6 @@ Coordinates=246,596,91,36
 [Label20]
 Coordinates=177,78,60,58
 
-[Image1]
-Coordinates=257,788,57,58
-
 [Label61]
 Coordinates=426,279,60,58
 
@@ -409,9 +406,6 @@ Coordinates=868,232,60,58
 
 [ProgressBar8]
 Coordinates=275,78,93,58
-
-[Image2]
-Coordinates=297,692,57,58
 
 [LCD2line2]
 Coordinates=651,596,75,58
