@@ -1106,7 +1106,7 @@ object WillemForm1: TWillemForm1
     Cursor = crHandPoint
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Button35'
+    Caption = 'Switch35'
     Color = clInactiveCaption
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -1130,7 +1130,7 @@ object WillemForm1: TWillemForm1
     Cursor = crHandPoint
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Button37'
+    Caption = 'Switch37'
     Color = clInactiveCaption
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -1154,7 +1154,7 @@ object WillemForm1: TWillemForm1
     Cursor = crHandPoint
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Button36'
+    Caption = 'Switch36'
     Color = clInactiveCaption
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -1673,8 +1673,8 @@ object WillemForm1: TWillemForm1
     TabOrder = 17
   end
   object memLog: TMemo
-    Left = 635
-    Top = 100
+    Left = 634
+    Top = 99
     Width = 218
     Height = 241
     Anchors = []
@@ -1686,17 +1686,17 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 632
+    ExplicitLeft = 631
   end
   object UDPEdit: TEdit
-    Left = 644
+    Left = 643
     Top = 17
     Width = 124
     Height = 21
     Anchors = []
     AutoSize = False
     TabOrder = 1
-    ExplicitLeft = 641
+    ExplicitLeft = 640
   end
   object btnOpen: TButton
     Left = 783
@@ -1710,7 +1710,7 @@ object WillemForm1: TWillemForm1
     ExplicitLeft = 779
   end
   object lstInterfaces: TComboBox
-    Left = 644
+    Left = 643
     Top = 51
     Width = 125
     Height = 21
@@ -1720,7 +1720,7 @@ object WillemForm1: TWillemForm1
     Items.Strings = (
       'test'
       'test 1')
-    ExplicitLeft = 641
+    ExplicitLeft = 640
   end
   object ProgressBar1: TProgressBar
     Left = 36
@@ -1844,8 +1844,8 @@ object WillemForm1: TWillemForm1
     OnClick = Button8Click
   end
   object memLog2: TMemo
-    Left = 637
-    Top = 384
+    Left = 636
+    Top = 385
     Width = 218
     Height = 231
     Anchors = []
@@ -1857,8 +1857,8 @@ object WillemForm1: TWillemForm1
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 18
-    ExplicitLeft = 634
-    ExplicitTop = 383
+    ExplicitLeft = 633
+    ExplicitTop = 384
   end
   object ProgressBar5: TProgressBar
     Left = 452
@@ -1949,16 +1949,16 @@ object WillemForm1: TWillemForm1
     TabOrder = 26
   end
   object CheckBox1: TCheckBox
-    Left = 766
-    Top = 362
+    Left = 767
+    Top = 363
     Width = 87
     Height = 20
     Anchors = []
     Caption = 'Debug'
     TabOrder = 27
     OnClick = CheckBox1Click
-    ExplicitLeft = 762
-    ExplicitTop = 361
+    ExplicitLeft = 763
+    ExplicitTop = 362
   end
   object GroupBox7: TGroupBox
     Left = 155
