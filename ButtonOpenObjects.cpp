@@ -2,8 +2,6 @@
 #include "ButtonOpenObjects.h"
 
 
-
-
 void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 {
 
@@ -77,7 +75,7 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 	if( itf == 0 )
 	{
 		memLog->Lines->Add( "EthernetOpen failed: %s" );
-		ShowMessage("Welcome to the Sellers Bank.");
+		//ShowMessage("Welcome to the Sellers Bank.");
 		return;
 	}
 
@@ -92,7 +90,8 @@ void __fastcall TWillemForm1::btnOpenClick(TObject *Sender)
 	sprintf(thisnodeB.Name, "Test Node Utility");
 	thisnodeB.ManufacturerID = 0x0001;
 	thisnodeB.ProductID = 0x0022;
-	thisnodeB.UniqueIDPerProduct = 0x110;   //UniqueIDPerProduct
+	//thisnodeB.UniqueIDPerProduct = 0x110;   //UniqueIDPerProduct
+	thisnodeB.UniqueIDPerProduct = uniqueidval;   //UniqueIDPerProduct
 	thisnodeB.HardwareMajorRevision = 0;
 	thisnodeB.HardwareMinorRevision = 0;
 	thisnodeB.FirmwareMajorRevision = 1;

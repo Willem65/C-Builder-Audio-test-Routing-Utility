@@ -15,6 +15,7 @@
 #include "mbn.h"
 
 unsigned int trackBar3Position, faderPosition;
+int uniqueidval;
 unsigned int count, count1, count2, toestand;
 
 //---------------------------------------------------------------------------
@@ -113,6 +114,7 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 	std::string ipString;
 	std::string crmStdPot;
 	std::string	faders;
+	std::string	uniqueid;
 
 	char Temp[16];
 
@@ -137,6 +139,10 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 			{
 				faders = line.c_str();
 			}
+			if (line.find("UniqueID    = ") != std::string::npos)
+			{
+				uniqueid = line.c_str();
+			}
 		}
 
 		file.close();
@@ -160,14 +166,29 @@ void __fastcall TWillemForm1::FormCreate(TObject *Sender)
 	String s3 = crmStdPot.c_str();
 	int text3 = s3.Length();
 	StrPCopy(Temp, s3.SubString1( 15 , text3-2 ));
-	memLog->Lines->Add(Temp);
+	//memLog->Lines->Add(Temp);
 	trackBar3Position = StrToInt(Temp);
+	char strbuf1[32];
+	sprintf(strbuf1,"crmStdPot =  %d  ",trackBar3Position);
+	memLog->Lines->Add(strbuf1);
 
 	String s4 = faders.c_str();
 	int text4 = s4.Length();
 	StrPCopy(Temp, s4.SubString1( 15 , text4-2 ));
-	memLog->Lines->Add(Temp);
+	//memLog->Lines->Add(Temp);
 	faderPosition = StrToInt(Temp);
+	char strbuf2[32];
+	sprintf(strbuf2,"faderPosition =  %d  ",faderPosition);
+	memLog->Lines->Add(strbuf2);
+
+	String s5 = uniqueid.c_str();
+	int text5 = s5.Length();
+	StrPCopy(Temp, s5.SubString1( 15 , text4-2 ));
+	uniqueidval = StrToInt(Temp);
+	char strbuf3[32];
+	sprintf(strbuf3,"UniqueID =  %d  0x%X",uniqueidval, uniqueidval);
+	memLog->Lines->Add(strbuf3);
+
 }
 
 

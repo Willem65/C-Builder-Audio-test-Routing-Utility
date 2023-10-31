@@ -1,4 +1,4 @@
-﻿
+
 #include "SensorControls.h"
 
 //---------------------------------------------------------------------------
@@ -177,7 +177,8 @@ void __fastcall TWillemForm1::Label41Click(TObject *Sender)
 //	union mbn_data d;
 //	d.SInt = 0;
 //	mbnUpdateSensorData(mbn, 1228, d);   // Switch 37
-//}
+//}
+
 
 void __fastcall TWillemForm1::Label76MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y)
 {

@@ -1,4 +1,4 @@
-﻿
+
 #include "WillemFormCode.h"
 #include "mbn.h"
 #include "MonitorPotentials.h"

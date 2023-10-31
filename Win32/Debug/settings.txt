@@ -1,3 +1,4 @@
 ip address  = 192.168.1.76
 monitorPots = 900
 faders      = 1000
+UniqueID    = 288

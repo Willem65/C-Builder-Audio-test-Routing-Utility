@@ -1,4 +1,4 @@
-﻿
+
 #define  OBJVALBUF 16
 
 #include "SetActuatorData.h"
@@ -33,7 +33,8 @@ int testcolor, testobj;
 //	// int buffer[10];
 //	// sprintf(buffer, "#%04d_%04d", 1084, 1023);
 //	// strcpy(dumpnew,buffer);
-//}
+//}
+
 
 
 int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data dat)
@@ -627,24 +628,25 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 	//-------------------------------------------------------------------------------------------------------------
 	// ------------------------------------- knopjes --------------------------------------------------------------
 	//-------------------------------------------------------------------------------------------------------------
-
 	else if ( obj == 1274 )
 	{
 		OnColorNow34 = dat.UInt;
 	}
 	else if ( obj == 1275 )
 	{
-		OnColorNow35 = dat.UInt;
+
+		OnColorNow35 = dat.UInt;
 	}
 	else if ( obj == 1276 )
 	{
-		OnColorNow36 = dat.UInt;
+
+		OnColorNow36 = dat.UInt;
 	}
 	else if ( obj == 1277 )
 	{
-		OnColorNow37 = dat.UInt;
-	}
 
+		OnColorNow37 = dat.UInt;
+	}
 
 	else if ( obj == 1323 )
 	{
@@ -652,17 +654,19 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 	}
 	else if ( obj == 1324 )
 	{
-		OffColorNow35 = dat.UInt;
+
+		OffColorNow35 = dat.UInt;
 	}
 	else if ( obj == 1325 )
 	{
-		OffColorNow36 = dat.UInt;
+
+		OffColorNow36 = dat.UInt;
 	}
 	else if ( obj == 1326 )
 	{
-		OffColorNow37 = dat.UInt;
-	}
 
+		OffColorNow37 = dat.UInt;
+	}
 
 //	//else if ( ((obj >= 1114) && (obj <=1137)) || ((obj >= 1290) && (obj <=1338)) )
 //	else if ( obj == 1323 )
@@ -677,7 +681,6 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 //	{
 //		OnColorNow34 = dat.UInt;
 //	}
-
 	//else if ( ((obj >= 1060) && (obj <=1083)) || ((obj >= 1192) && (obj <=1240)) )
 //	else if (obj == 1225)
 //	{
@@ -692,7 +695,6 @@ int mSetActuatorData(struct mbn_handler *mbn, unsigned short obj, union mbn_data
 //			testcolor=OffColorNow34;
 //
 //	}
-
 	//-----------------------------------------------------------------------------------------------------------
 	//-----------------------------------------------------------------------------------------------------------
 

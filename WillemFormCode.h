@@ -261,5 +261,6 @@ public:		// User declarations
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TWillemForm1 *WillemForm1;
+extern   int uniqueidval;
 //---------------------------------------------------------------------------
 #endif
